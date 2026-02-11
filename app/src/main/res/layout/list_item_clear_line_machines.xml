@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="line"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineContainer"
+        android:background="@color/colorLineBackground"
+        >
+<!--        android:onClick="@{() -> clickListener.onClick(line)}"-->
+
+        <TextView
+            android:id="@+id/machineStationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/list_item_label_line_margin_start"
+            android:layout_marginTop="@dimen/list_item_label_line_margin_top"
+            android:layout_marginEnd="@dimen/list_item_label_line_margin_end"
+            android:layout_marginBottom="@dimen/list_item_label_line_margin_bottom"
+            android:text="@{line}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/list_item_label_line_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="YTI-02" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

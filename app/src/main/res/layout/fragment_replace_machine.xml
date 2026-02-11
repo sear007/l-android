@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.replacemachine.ReplaceMachineFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.ReplaceMachineViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:id="@+id/coordinatorLayout"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+
+            <TextView
+                android:id="@+id/placeTextView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="Scan machine"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/machineNoTextView" />
+
+            <TextView
+                android:id="@+id/btnScan"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_scan_height"
+                android:layout_marginStart="@dimen/setup_line_button_margin_start"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/setup_line_button_margin_end"
+                android:background="@drawable/scan_button"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center_vertical"
+                android:text="@string/setup_line_button_scan"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_button_scan_text_size"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeTextView5" />
+
+            <TextView
+                android:id="@+id/toolBarSelectedLineTextView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/setup_line_label_selected_line_margin_end"
+                android:fontFamily="@font/seguibl"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_selected_line_text_size"
+                app:layout_constraintBaseline_toBaselineOf="@+id/toolBarTitleTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="YTI-02" />
+
+            <TextView
+                android:id="@+id/placeTextView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="Machine No"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBarTitleTextView" />
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/replace_machine"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/toolBarSelectedLineTextView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/machineNoTextView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_machine_no_height"
+                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"
+                android:layout_marginTop="@dimen/setup_line_machine_no_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"
+                android:background="@android:color/white"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/setup_line_machine_no_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeTextView2"
+                tools:text="BLKJ 382976" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/drawer"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="13dp"
+                android:elevation="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_menu_white"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

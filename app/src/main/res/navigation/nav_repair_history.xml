@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_repair_history"
+    app:startDestination="@id/repairHistoryFragment">
+
+    <fragment
+        android:id="@+id/repairHistoryFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.RepairHistoryFragment"
+        android:label="RepairHistoryFragment"
+        tools:layout="@layout/fragment_repair_history">
+
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+
+    </fragment>
+
+</navigation>

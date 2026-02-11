@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.createticket.MechanicCreateTicketAttachFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.MechanicCreateTicketAttachViewModel" />
+    </data>
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/coordinatorLayout" >-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/constraintLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/colorBackground"-->
+<!--            android:clickable="true"-->
+<!--            android:focusableInTouchMode="true"-->
+<!--            tools:layout_editor_absoluteX="4dp"-->
+<!--            tools:layout_editor_absoluteY="-38dp">-->
+
+
+<!--            <Spinner-->
+<!--                android:id="@+id/solutionSpinner5"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:dropDownWidth="match_parent"-->
+<!--                android:elevation="2dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="1.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView9" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/problemTextView3"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"-->
+<!--                android:background="@android:color/white"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="@dimen/setup_line_machine_no_padding_start"-->
+<!--                android:paddingEnd="0dp"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView9" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/videoIcon3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_video"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/videoIcon2"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/attachVideo" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/videoIcon2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_video"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/videoIcon1"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/attachVideo" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/clearVideo"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="CLEAR"-->
+<!--                android:textColor="#6DC3FF"-->
+<!--                android:textSize="12sp"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/attachVideo" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageIcon2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_image"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/imageIcon1"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/cameraImageView2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:elevation="2dp"-->
+<!--                android:src="@drawable/camera"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView13" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/attachVideo"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:background="@color/colorButtonBackground"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.23"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView15" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView15"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Add video"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/remarksEditText" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView13"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Add picture"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/remarksEditText" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView10"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Remarks"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/solutionSpinner" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView9"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Solution"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/problemTextView" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/btnSubmit"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/setup_line_button_height"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="center"-->
+<!--                android:text="SUBMIT"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="1.0"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"-->
+<!--                app:layout_constraintVertical_bias="0.96" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/btnCancel"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/setup_line_button_height"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:background="@drawable/ic_line_setup_edit_button"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/setup_line_button_cancel"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"-->
+<!--                app:layout_constraintVertical_bias="0.96" />-->
+
+<!--            <androidx.constraintlayout.widget.Guideline-->
+<!--                android:id="@+id/guideline3"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="205dp"-->
+<!--                android:layout_marginEnd="206dp"-->
+<!--                android:orientation="vertical"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintGuide_begin="183dp"-->
+<!--                app:layout_constraintGuide_end="205dp"-->
+<!--                app:layout_constraintGuide_percent="0.5"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/problemTextView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"-->
+<!--                android:background="@android:color/white"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="@dimen/setup_line_machine_no_padding_start"-->
+<!--                android:paddingEnd="0dp"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView7"-->
+<!--                tools:text="Machine problem 8" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView7"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Selected problem"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/machineNoTextView" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/placeTextView2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="Scan machine barcode"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_scan_machine_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/toolBarTitleTextView" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/toolBarTitleTextView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"-->
+<!--                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="@string/create_ticket"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/setup_line_label_title_text_size"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/machineNoTextView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"-->
+<!--                android:layout_marginTop="@dimen/setup_line_machine_no_margin_top"-->
+<!--                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"-->
+<!--                android:background="@android:color/white"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="@dimen/setup_line_machine_no_padding_start"-->
+<!--                android:paddingEnd="0dp"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView2"-->
+<!--                tools:text="BLKJ 382976" />-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progress_bar"-->
+<!--                style="@style/Widget.AppCompat.ProgressBar"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:elevation="20dp"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/solutionSpinner"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:dropDownWidth="match_parent"-->
+<!--                android:elevation="3dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView9" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/remarksEditText"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:background="@android:color/white"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:gravity="start|top"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:paddingStart="15dp"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView10" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/videoImageView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:elevation="2dp"-->
+<!--                android:src="@drawable/camera"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView15" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/attachImage"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="@color/colorButtonBackground"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/placeTextView13" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageIcon3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_image"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/imageIcon2"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageIcon1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_image"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/clearImage"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:fontFamily="@font/segoeui"-->
+<!--                android:text="CLEAR"-->
+<!--                android:textColor="#6DC3FF"-->
+<!--                android:textSize="12sp"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/videoIcon1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_file_video"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guideline3"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/attachVideo" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinatorLayout" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="-38dp">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBarTitleTextView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/solutionSpinner5"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:dropDownWidth="match_parent"
+                        android:elevation="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelSolution" />
+
+                    <TextView
+                        android:id="@+id/problemTextView3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelSolution" />
+
+                    <ImageView
+                        android:id="@+id/videoIcon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_video"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toEndOf="@+id/videoIcon2"
+                        app:layout_constraintTop_toBottomOf="@+id/attachVideo" />
+
+                    <ImageView
+                        android:id="@+id/videoIcon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_video"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toEndOf="@+id/videoIcon1"
+                        app:layout_constraintTop_toBottomOf="@+id/attachVideo" />
+
+                    <TextView
+                        android:id="@+id/clearVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="CLEAR"
+                        android:textColor="#6DC3FF"
+                        android:textSize="12sp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/attachVideo" />
+
+                    <ImageView
+                        android:id="@+id/imageIcon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_image"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toEndOf="@+id/imageIcon1"
+                        app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />
+
+                    <ImageView
+                        android:id="@+id/cameraImageView2"
+                        android:layout_width="0dp"
+                        android:layout_height="41dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:elevation="2dp"
+                        android:src="@drawable/camera"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelAddPicture" />
+
+                    <TextView
+                        android:id="@+id/attachVideo"
+                        android:layout_width="0dp"
+                        android:layout_height="41dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorButtonBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.23"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/labelAddVideo" />
+
+                    <TextView
+                        android:id="@+id/labelAddVideo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Add video"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/remarksEditText" />
+
+                    <TextView
+                        android:id="@+id/labelAddPicture"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Add picture"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/remarksEditText" />
+
+                    <TextView
+                        android:id="@+id/labelRemarks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Remarks"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/solutionSpinner" />
+
+                    <TextView
+                        android:id="@+id/labelSolution"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Solution"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/problemTextView" />
+
+                    <TextView
+                        android:id="@+id/problemTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelSelectedProblem"
+                        tools:text="Machine problem 8" />
+
+                    <TextView
+                        android:id="@+id/labelSelectedProblem"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Selected problem"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/machineNoTextView" />
+
+                    <TextView
+                        android:id="@+id/labelScanMachine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Scan machine barcode"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/machineNoTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/setup_line_machine_no_margin_top"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelScanMachine"
+                        tools:text="BLKJ 382976" />
+
+<!--                    <Spinner-->
+<!--                        android:id="@+id/solutionSpinner"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:dropDownWidth="match_parent"-->
+<!--                        android:elevation="3dp"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.0"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/labelSolution" />-->
+
+                    <TextView
+                        android:id="@+id/solutionSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:elevation="3dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelSolution" />
+
+                    <EditText
+                        android:id="@+id/remarksEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:paddingStart="15dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelRemarks" />
+
+                    <ImageView
+                        android:id="@+id/videoImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="41dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:elevation="2dp"
+                        android:src="@drawable/camera"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/labelAddVideo" />
+
+                    <TextView
+                        android:id="@+id/attachImage"
+                        android:layout_width="0dp"
+                        android:layout_height="41dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@color/colorButtonBackground"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelAddPicture" />
+
+                    <ImageView
+                        android:id="@+id/imageIcon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_image"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toEndOf="@+id/imageIcon2"
+                        app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />
+
+                    <ImageView
+                        android:id="@+id/imageIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_image"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />
+
+                    <TextView
+                        android:id="@+id/clearImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="CLEAR"
+                        android:textColor="#6DC3FF"
+                        android:textSize="12sp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/cameraImageView2" />
+
+                    <ImageView
+                        android:id="@+id/videoIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_file_video"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/attachVideo" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline12"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="205dp"
+                        android:layout_marginEnd="206dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintGuide_begin="183dp"
+                        app:layout_constraintGuide_end="205dp"
+                        app:layout_constraintGuide_percent="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/create_ticket"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="SUBMIT"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_cancel"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="205dp"
+                android:layout_marginEnd="206dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="183dp"
+                app:layout_constraintGuide_end="205dp"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

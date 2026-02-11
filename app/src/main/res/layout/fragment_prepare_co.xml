@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="org.json.JSONObject" />
+
+        <variable
+            name="jTranslate"
+            type="JSONObject" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/toolBarTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+            android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+            android:fontFamily="@font/segoeui"
+            android:text="Station 1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/setup_line_label_title_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_start_prepare"
+            android:layout_below="@id/toolBarTitleTextView"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/padding_4x">
+
+                <ImageView
+                    android:id="@+id/iv_critical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4x"
+                    android:layout_marginEnd="@dimen/margin_4x"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_mac_sub_type"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_mac_sub_type"
+                    tools:src="@drawable/ic_critical" />
+
+                <TextView
+                    android:id="@+id/tv_mac_sub_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_3x"
+                    android:layout_marginEnd="@dimen/margin_4x"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_x_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_critical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="BT: BARTACK MACHINE" />
+
+                <TextView
+                    android:id="@+id/tv_machine_no_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4x"
+                    android:layout_marginEnd="@dimen/margin_4x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="Machine No."
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:translate_textview="@{jTranslate}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mac_sub_type" />
+
+                <TextView
+                    android:id="@+id/tv_machine_no_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_x_normal"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_machine_no_title" />
+
+                <TextView
+                    android:id="@+id/tv_needle_type_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    app:translate_textview="@{jTranslate}"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="Needle Type"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_machine_no_value" />
+
+                <TextView
+                    android:id="@+id/tv_needle_type_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_x_normal"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_needle_type_title"
+                    tools:text="DBX1" />
+
+                <TextView
+                    android:id="@+id/tv_attachment_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="Attachment"
+                    app:translate_textview="@{jTranslate}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_needle_type_value" />
+
+                <TextView
+                    android:id="@+id/tv_attachment_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_attachment_title"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_attachment_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_attachment_title"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_att_image" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_attachment_des"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/rv_attachment_image"
+                    app:layout_constraintStart_toStartOf="@id/rv_attachment_image"
+                    app:layout_constraintTop_toBottomOf="@id/rv_attachment_image"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_prepare_att_des" />
+
+                <TextView
+                    android:id="@+id/tv_change_over_check_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="Changeover Checklist"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:translate_textview="@{jTranslate}"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/rv_attachment_des"
+                    app:layout_goneMarginTop="@dimen/margin_8x" />
+
+                <TextView
+                    android:id="@+id/tv_check_list_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_change_over_check_list" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_check_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/tv_change_over_check_list"
+                    app:layout_constraintStart_toStartOf="@id/tv_change_over_check_list"
+                    app:layout_constraintTop_toBottomOf="@id/tv_change_over_check_list"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_prepare_att_des" />
+
+                <TextView
+                    android:id="@+id/tv_remark_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="Remarks"
+                    app:translate_textview="@{jTranslate}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/rv_check_list"
+                    app:layout_goneMarginTop="@dimen/margin_10x" />
+
+                <TextView
+                    android:id="@+id/tv_remark_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_remark_title"
+                    tools:text="I am remarks" />
+
+                <TextView
+                    android:id="@+id/tv_status_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@drawable/bg_light_dark"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    app:translate_textview="@{jTranslate}"
+                    android:text="Status Information"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_remark_value" />
+
+                <TextView
+                    android:id="@+id/tv_status_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/padding_3x"
+                    android:paddingTop="@dimen/padding_1x"
+                    android:paddingEnd="@dimen/padding_3x"
+                    android:paddingBottom="@dimen/padding_1x"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintEnd_toEndOf="@id/tv_machine_no_title"
+                    app:layout_constraintStart_toStartOf="@id/iv_critical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_status_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_start_prepare"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_4x"
+            android:layout_marginBottom="@dimen/margin_4x"
+            android:background="@drawable/button"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            app:translate_button="@{jTranslate}"
+            android:text="START PREPARE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_normal" />
+
+    </RelativeLayout>
+
+</layout>

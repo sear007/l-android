@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorButton">#0f75bc</color>
+    <color name="colorButton1">#1D547A</color>
+    <color name="colorBackground">#1e3c50</color>
+    <color name="colorButtonBackground">#1d5072</color>
+    <color name="colorButtonScan">#2d7ab2</color>
+
+    <color name="textButtonColor">#0f75bc</color>
+    <color name="textButtonColorBackground">#1d5072</color>
+    <color name="colorLineBackground">#f2f2f2</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="hintColor">#8A000000</color>
+    <color name="gray">#707070</color>
+    <color name="errorMessage">#B71C1C</color>
+    <color name="colorEditTextLogin">#1565C0</color>
+    <color name="blue_400">#1E88E5</color>
+
+    <color name="pale_grey">#f7f7fb</color>
+    <color name="dull_orange">#df6535</color>
+    <color name="peacock_blue">#006597</color>
+    <color name="warm_grey">#707070</color>
+    <color name="black_87">#de000000</color>
+    <color name="brick">#b71c1c</color>
+    <color name="red">#D04C4C</color>
+    <color name="black_54">#8a000000</color>
+    <color name="dark_sky_blue">#1e88e5</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorPressed">#DDD9D9</color>
+
+    <!--Ticket status color-->
+    <color name="colorReopen">#FF435B</color>
+    <color name="colorClosedRepaired">#A4E63C</color>
+    <color name="colorReported">#FB460E</color>
+    <color name="colorInRepair">#FEA948</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorCOStatusNew">#4CAF50</color>
+    <color name="colorCOStatusInProgress">#F57C00</color>
+    <color name="colorCOStatusReady">#D167FF</color>
+    <color name="colorCOStatusClosed">#FFFFFF</color>
+
+</resources>

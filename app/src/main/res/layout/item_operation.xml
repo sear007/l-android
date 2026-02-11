@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="marginTop"
+            type="Float" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue"
+        app:layoutMarginTop="@{marginTop}">
+
+        <View
+            android:id="@+id/v_color"
+            android:layout_width="@dimen/margin_1x"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="#F57C00" />
+
+        <ImageView
+            android:id="@+id/iv_critical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_1x"
+            app:layout_constraintBottom_toBottomOf="@id/tv_mac_sub_type"
+            app:layout_constraintStart_toEndOf="@id/v_color"
+            app:layout_constraintTop_toTopOf="@id/tv_mac_sub_type"
+            tools:src="@drawable/ic_critical" />
+
+        <TextView
+            android:id="@+id/tv_mac_sub_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:ellipsize="middle"
+            android:fontFamily="@font/roboto_bold"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"
+            app:layout_constraintStart_toEndOf="@id/iv_critical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="SEWING MACHINES" />
+
+        <TextView
+            android:id="@+id/tv_machine_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1x"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toStartOf="@id/tv_mac_sub_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_mac_sub_type"
+            tools:text="WZ-MC-A009" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1x"
+            android:alpha="0.6"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/padding_2x"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_mac_sub_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_machine_no"
+            tools:text="Jn Inner&amp;Outer WB 1End 1*2 CS1 6 A5 ដេ …" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_3x"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#F57C00"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_mac_sub_type"
+            tools:text="IN PROGRESS" />
+
+        <TextView
+            android:id="@+id/tv_needle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1x"
+            android:layout_marginEnd="@dimen/margin_3x"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status"
+            tools:text="DPX5SES" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.setupline.SetupLinePlacesFragment">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.SetupLinePlacesViewModel" />
+
+        <variable
+            name="jTranslate"
+            type="org.json.JSONObject" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_label_title_margin_start"
+                android:ellipsize="end"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_large"
+                app:autoSizeMaxTextSize="@dimen/text_large"
+                app:autoSizeMinTextSize="@dimen/text_x_normal"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="SPTX_EL_SALVADOR" />
+
+            <Button
+                android:id="@+id/btnEditLineSetup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_edit_height"
+                android:layout_marginStart="@dimen/setup_line_button_edit_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_button_edit_margin_end"
+                android:layout_marginBottom="@dimen/setup_line_button_edit_margin_bottom"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/setup_line_button_edit"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:translate_button="@{jTranslate}" />
+
+            <Button
+                android:id="@+id/btnConfirmLineSetup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="@dimen/setup_line_button_confirm_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_button_margin_end"
+                android:background="@drawable/button"
+                android:fontFamily="@font/segoeui"
+                android:text="BACK"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+                app:translate_button="@{jTranslate}" />
+
+            <TextView
+                android:id="@+id/tvCheckInNewMachineTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_recyclerview_margin_start"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/setup_line_recyclerview_margin_start"
+                android:background="@color/colorButtonBackground"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/list_item_machine_place_label_machine_code_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBarTitleTextView"
+                tools:text="+ CHECK-IN NEW MACHINE" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/setup_line_recyclerview_margin_start"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/setup_line_recyclerview_margin_end"
+                android:layout_marginBottom="@dimen/setup_line_recyclerview_margin_bottom"
+                app:layout_constraintBottom_toTopOf="@+id/btnEditLineSetup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCheckInNewMachineTextView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="183dp"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>
