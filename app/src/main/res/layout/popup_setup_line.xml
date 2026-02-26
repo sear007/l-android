@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.MechanicHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/closePopupSL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/popup_close_button_margin_top"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/popup_close_button_text"
+            android:textSize="@dimen/popup_close_button_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/popup_label_select_lines_margin_start"
+            android:layout_marginEnd="@dimen/popup_label_select_lines_margin_end"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/popup_label_select_lines"
+            android:textColor="@color/colorButton"
+            android:textSize="@dimen/popup_label_select_lines_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closePopupSL" />
+
+        <EditText
+            android:id="@+id/linesearchEditTextSL"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/popup_search_bar_height"
+            android:layout_marginStart="@dimen/popup_search_bar_margin_start"
+            android:layout_marginTop="@dimen/popup_search_bar_margin_top"
+            android:layout_marginEnd="@dimen/popup_search_bar_margin_end"
+            android:background="@drawable/edit_text"
+            android:ems="10"
+            android:hint="@string/popup_hint_search"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/noResultsTextViewSL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="No Lines Found"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/popup_recyclerview_margin_start"
+            android:layout_marginTop="@dimen/popup_recyclerview_margin_top"
+            android:layout_marginEnd="@dimen/popup_recyclerview_margin_end"
+            android:layout_marginBottom="@dimen/popup_recyclerview_margin_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linesearchEditTextSL" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

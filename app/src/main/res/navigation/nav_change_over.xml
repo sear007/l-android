@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_change_over"
+    app:startDestination="@id/changeOverFragment">
+
+    <fragment
+        android:id="@+id/changeOverFragment"
+        android:name="co.ltlabs.ltmechanic.ui.changeover.COFragment"
+        android:label="COFragment"
+        tools:layout="@layout/fragment_change_over">
+
+        <argument
+            android:name="isOpenedByNotify"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="coNo"
+            android:defaultValue="null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_changeOverFragment_to_coDetailFragment"
+            app:destination="@id/coDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/coDetailFragment"
+        android:name="co.ltlabs.ltmechanic.ui.changeover.detailco.CODetailFragment"
+        android:label="CODetailFragment"
+        tools:layout="@layout/fragment_co_detail">
+
+        <argument
+            android:name="coNo"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_coDetailFragment_to_prepareCOFragment"
+            app:destination="@id/prepareCOFragment" />
+
+        <action
+            android:id="@+id/action_coDetailFragment_to_readyCOFragment"
+            app:destination="@id/readyCOFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/prepareCOFragment"
+        android:name="co.ltlabs.ltmechanic.ui.changeover.prepareco.PrepareCOFragment"
+        android:label="PrepareCOFragment"
+        tools:layout="@layout/fragment_prepare_co">
+
+        <action
+            android:id="@+id/action_finalCOFragment_to_readyCOFragment"
+            app:destination="@id/readyCOFragment"
+            app:popUpTo="@id/prepareCOFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="station"
+            app:argType="string" />
+
+        <argument
+            android:name="item"
+            app:argType="co.ltlabs.ltmechanic.domain.changeover.OperationItem"
+            app:nullable="true" />
+
+        <argument
+            android:name="checkList"
+            app:argType="co.ltlabs.ltmechanic.domain.changeover.CheckListItem[]"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/readyCOFragment"
+        android:name="co.ltlabs.ltmechanic.ui.changeover.readyco.ReadyCOFragment"
+        android:label="ReadyCOFragment"
+        tools:layout="@layout/fragment_ready_co">
+
+        <argument
+            android:name="station"
+            app:argType="string" />
+
+        <argument
+            android:name="item"
+            app:argType="co.ltlabs.ltmechanic.domain.changeover.OperationItem"
+            app:nullable="true" />
+
+        <argument
+            android:name="checkList"
+            app:argType="co.ltlabs.ltmechanic.domain.changeover.CheckListItem[]"
+            app:nullable="true" />
+
+        <argument
+            android:name="status"
+            app:argType="co.ltlabs.ltmechanic.constant.type.COStatusType"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

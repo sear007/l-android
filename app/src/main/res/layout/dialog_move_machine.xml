@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="org.json.JSONObject" />
+
+        <variable
+            name="jTranslate"
+            type="JSONObject" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_small_radious"
+        android:paddingTop="@dimen/padding_4x"
+        android:paddingBottom="@dimen/padding_2x">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_4x"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="MOVE Machine to"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:translate_textview="@{jTranslate}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/root_building"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_4x"
+            android:background="@color/white"
+            app:errorTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:hint="Destination Building *">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_building"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_drop_down"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:importantForAutofill="no"
+                android:longClickable="false"
+                android:textColor="@color/black"
+                android:textIsSelectable="false"
+                tools:text="XOTEX Bldg 1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/root_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_4x"
+            android:background="@color/white"
+            app:errorTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/root_building"
+            tools:hint="Choose an area *">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_drop_down"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                android:textColor="@color/black"
+                android:textIsSelectable="false"
+                tools:text="Sewing (XOtex)" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_8x"
+            android:background="#1A000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/root_area" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="@dimen/padding_4x"
+            android:text="CANCEL"
+            android:textColor="#4D000000"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintEnd_toStartOf="@id/tv_ok"
+            app:layout_constraintTop_toBottomOf="@id/v_line"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="@dimen/padding_4x"
+            android:text="OK"
+            android:textColor="#1E88E5"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintEnd_toEndOf="@id/root_area"
+            app:layout_constraintTop_toBottomOf="@id/v_line"
+            app:translate_textview="@{jTranslate}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

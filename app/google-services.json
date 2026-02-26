@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501433425927",
+    "firebase_url": "https://ltmechanic.firebaseio.com",
+    "project_id": "ltmechanic",
+    "storage_bucket": "ltmechanic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501433425927:android:011c037a490019cf598aa2",
+        "android_client_info": {
+          "package_name": "co.ltlabs.ltmechanic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501433425927-jb3351hbafpof076n3q4blne2os52urp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI6csQ6QIGGULZkf39rUUEGt4MMD79Wak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501433425927-jb3351hbafpof076n3q4blne2os52urp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

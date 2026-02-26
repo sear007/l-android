@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/lineLeaderHomeFragment"
+            android:checkable="true"
+            android:checked="true"
+            android:title="@string/dashboard" />
+        <item
+            android:id="@+id/create_ticket"
+            android:checkable="false"
+            android:title="@string/create_ticket" />
+        <item
+            android:id="@+id/lineLeaderReportedTicketsFragment"
+            android:title="@string/reported_tickets" />
+        <item
+            android:id="@+id/lineLeaderInRepairTicketsFragment"
+            android:title="@string/in_repair_tickets" />
+        <item
+            android:id="@+id/lineLeaderRepairedTicketsFragment"
+            android:title="@string/repaired_tickets" />
+        <item
+            android:id="@+id/nav_change_over"
+            android:title="@string/change_over" />
+        <item
+            android:id="@+id/query_machine"
+            android:checkable="false"
+            android:title="@string/query_machine" />
+        <item
+            android:id="@+id/send_request"
+            android:checkable="false"
+            android:title="@string/send_request" />
+        <item
+            android:id="@+id/changeLanguageFragment"
+            android:title="@string/change_language" />
+        <item
+            android:id="@+id/notificationFragment"
+            android:title="@string/notifications" />
+        <item
+            android:id="@+id/changePasswordFragment"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/changeFactoryFragment"
+            android:title="@string/change_factory" />
+        <item android:title="" />
+        <item android:title="" />
+
+    </group>
+</menu>

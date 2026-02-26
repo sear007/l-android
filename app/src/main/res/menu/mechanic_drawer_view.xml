@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mechanicHomeFragment"
+            android:checkable="true"
+            android:checked="true"
+            android:title="@string/dashboard" />
+        <item
+            android:id="@+id/mechanicReportedTicketsFragment"
+            android:title="@string/reported_tickets" />
+        <item
+            android:id="@+id/mechanicInRepairTicketsFragment"
+            android:title="@string/in_repair_tickets" />
+        <item
+            android:id="@+id/mechanicRepairedTicketsFragment"
+            android:title="@string/repaired_tickets" />
+        <item
+            android:id="@+id/nav_change_over"
+            android:title="@string/change_over" />
+        <item
+            android:id="@+id/query_machine"
+            android:checkable="false"
+            android:title="@string/query_machine" />
+        <item
+            android:id="@+id/lineStatusFragment"
+            android:title="@string/line_overview" />
+        <item
+            android:id="@+id/replace_machine"
+            android:checkable="false"
+            android:title="@string/replace_machine" />
+        <item
+            android:id="@+id/setupLineFragment"
+            android:title="@string/setup_line" />
+        <item
+            android:id="@+id/nav_maint"
+            android:title="@string/maintenance" />
+        <item
+            android:id="@+id/move_machine"
+            android:checkable="false"
+            android:title="@string/move_machine" />
+        <item
+            android:id="@+id/changeLanguageFragment"
+            android:title="@string/change_language" />
+        <item
+            android:id="@+id/notificationFragment"
+            android:title="@string/notifications" />
+        <item
+            android:id="@+id/changePasswordFragment"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/changeFactoryFragment"
+            android:title="@string/change_factory" />
+        <item android:title="" />
+        <item android:title="" />
+    </group>
+
+</menu>

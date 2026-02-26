@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_maint_history"
+    app:startDestination="@id/maintenanceHistoryFragment">
+
+    <fragment
+        android:id="@+id/maintenanceHistoryFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintenanceHistoryFragment"
+        android:label="MaintenanceHistoryFragment"
+        tools:layout="@layout/fragment_maintenance_history">
+        <action
+            android:id="@+id/action_maintenanceHistoryFragment_to_maintenanceHistoryChecklistFragment"
+            app:destination="@id/maintenanceHistoryChecklistFragment" />
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/maintenanceHistoryChecklistFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintenanceHistoryChecklistFragment"
+        android:label="MaintenanceHistoryChecklistFragment"
+        tools:layout="@layout/fragment_maintenance_history_checklist">
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

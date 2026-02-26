@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="jTranslate"
+            type="org.json.JSONObject" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#081C29">
+
+        <TextView
+            android:id="@+id/tv_updated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:gravity="start"
+            android:padding="@dimen/padding_2x"
+            android:textColor="#FFFFFFDE"
+            android:textSize="@dimen/text_x_small"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Updated at 13:00, Monday, 18 Apr 2022" />
+
+        <RelativeLayout
+            android:id="@+id/ll_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_updated"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_machine_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="@dimen/margin_1x"
+                android:layout_toStartOf="@id/iv_clear_filter"
+                android:gravity="start"
+                android:padding="@dimen/padding_2x"
+                android:textColor="@color/black"
+                tools:text="Filter: HCVS-0285" />
+
+            <ImageView
+                android:id="@+id/iv_clear_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:src="@drawable/ic_close" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_7_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:gravity="start"
+            android:padding="@dimen/padding_2x"
+            android:text="Last 7 Days Only"
+            android:textColor="#FFFFFFDE"
+            android:textSize="@dimen/text_x_small"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_updated"
+            app:layout_constraintEnd_toEndOf="@id/tv_updated"
+            app:layout_constraintTop_toTopOf="parent"
+            app:translate_textview="@{jTranslate}"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_maintenance"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            android:paddingBottom="@dimen/margin_1x"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_maintenance" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter" />
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="@dimen/padding_2x"
+            android:text="No data found!"
+            android:textColor="#FFFFFFDE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

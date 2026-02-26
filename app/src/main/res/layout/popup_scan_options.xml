@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="jTranslate"
+            type="org.json.JSONObject" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:id="@+id/labelBarcodeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/segoeui"
+            android:text="Use the external barcode scanner"
+            android:textColor="#565656"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelTitleScanBarcode"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/labelNFCDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/segoeui"
+            android:text="Hold the device near the NFC chip to start scanning"
+            android:textColor="#565656"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelTitleScanNFC"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/labelTitleScanNFC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/seguibl"
+            android:text="SCAN NFC"
+            android:textColor="#565656"
+            android:textSize="@dimen/popup_label_enter_machine_number_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnScanCamera"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/labelTitleScanBarcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/seguibl"
+            android:text="SCAN BARCODE"
+            android:textColor="#565656"
+            android:textSize="@dimen/popup_label_enter_machine_number_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelNFCDescription"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/btnScanCamera"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/setup_line_button_scan_height"
+            android:layout_marginStart="@dimen/setup_line_button_scan_margin_start"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/setup_line_button_scan_margin_end"
+            android:background="@drawable/scan_button"
+            android:fontFamily="@font/seguibl"
+            android:gravity="center_vertical"
+            android:text="SCAN WITH CAMERA"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/setup_line_button_scan_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/machineEditText"
+            app:translate_textview="@{jTranslate}" />
+
+        <TextView
+            android:id="@+id/labelReadyToScan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/popup_label_enter_machine_number_margin_start"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/seguibl"
+            android:text="READY TO SCAN"
+            android:textColor="#565656"
+            android:textSize="@dimen/popup_label_enter_machine_number_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:translate_textview="@{jTranslate}" />
+
+        <EditText
+            android:id="@+id/machineEditText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/popup_field_machine_no_height"
+            android:layout_marginStart="@dimen/popup_field_machine_no_margin_start"
+            android:layout_marginTop="@dimen/popup_field_machine_no_margin_top"
+            android:background="@drawable/edit_text_sharp_corner"
+            android:ems="10"
+            android:fontFamily="@font/segoeuii"
+            android:hint="Manually search machine"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/popup_field_machine_no_padding_start"
+            android:paddingEnd="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSubmitMachine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelReadyToScan"
+            app:translate_edittext="@{jTranslate}" />
+
+        <ImageView
+            android:id="@+id/btnSubmitMachine"
+            android:layout_width="@dimen/popup_button_submit_width"
+            android:layout_height="@dimen/popup_button_submit_height"
+            android:layout_marginTop="@dimen/popup_button_submit_margin_top"
+            android:layout_marginEnd="@dimen/popup_button_submit_margin_end"
+            android:background="@drawable/submit_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelReadyToScan"
+            app:srcCompat="@drawable/ic_arrow_white" />
+
+        <ImageView
+            android:id="@+id/closePopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

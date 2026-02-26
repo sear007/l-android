@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_1x"
+        tools:background="#0C212F">
+
+        <co.ltlabs.ltmechanic.util.ImageCheckBox
+            android:id="@+id/iv_check"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_white_small_radious"
+            android:padding="@dimen/padding_1x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_3x"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintBottom_toBottomOf="@id/iv_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_check"
+            app:layout_constraintTop_toTopOf="@id/iv_check"
+            tools:text="DBX1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

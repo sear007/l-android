@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.MechanicHomeFragment">
+
+    <data>
+
+        <import type="org.json.JSONObject" />
+
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.MechanicHomeViewModel" />
+
+        <variable
+            name="jTranslate"
+            type="JSONObject" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/login_background">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/usernameTextViewMC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/versionMC">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mechanicHomeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/btnMCInRepairTickets2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="@dimen/dashboard_margin_start_end"
+                        android:layout_marginTop="@dimen/dashboard_button_margin_top"
+                        android:layout_marginEnd="@dimen/dashboard_margin_start_end"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCReportedTickets" />
+
+                    <ImageView
+                        android:id="@+id/lineFilterMC"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_filter_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_filter_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/filterIconMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_filter"
+                        app:layout_constraintBottom_toBottomOf="@+id/lineFilterMC"
+                        app:layout_constraintEnd_toEndOf="@+id/lineFilterMC"
+                        app:layout_constraintHorizontal_bias="0.052"
+                        app:layout_constraintStart_toStartOf="@+id/lineFilterMC"
+                        app:layout_constraintTop_toTopOf="@+id/lineFilterMC"
+                        app:layout_constraintVertical_bias="0.555" />
+
+                    <TextView
+                        android:id="@+id/tv_filter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_line_margin_start"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/segoeui"
+                        android:maxLines="1"
+                        android:tag="filterTextView1"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_line_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/lineFilterMC"
+                        app:layout_constraintEnd_toEndOf="@id/lineFilterMC"
+                        app:layout_constraintStart_toEndOf="@+id/filterIconMC"
+                        app:layout_constraintTop_toTopOf="@+id/lineFilterMC"
+                        tools:text="Filters" />
+
+                    <ImageView
+                        android:id="@+id/btnMCReportedTickets"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="@dimen/dashboard_button_margin_top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineFilterMC" />
+
+                    <TextView
+                        android:id="@+id/reportedTicketsTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/reported_tickets"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintVertical_bias="0.533"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <TextView
+                        android:id="@+id/reportedTicketsCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="@dimen/dashboard_count_margin_bottom"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/reported_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCReportedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCReportedTickets"
+                        tools:text="@string/reported_tickets_count" />
+
+                    <ImageView
+                        android:id="@+id/btnMCReopenedTickets"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="@dimen/dashboard_button_margin_top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCReportedTickets" />
+
+                    <TextView
+                        android:id="@+id/reopenedTicketsTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/reopened_tickets"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintVertical_bias="0.533"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <TextView
+                        android:id="@+id/reopenedTicketsCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="@dimen/dashboard_count_margin_bottom"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/reported_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCReopenedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCReopenedTickets"
+                        tools:text="@string/reported_tickets_count" />
+
+                    <ImageView
+                        android:id="@+id/btnMCInRepairTickets"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="@dimen/dashboard_button_margin_top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCReopenedTickets" />
+
+                    <TextView
+                        android:id="@+id/inRepairTicketsCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="@dimen/dashboard_count_margin_bottom"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/in_repair_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCInRepairTickets"
+                        tools:text="@string/in_repair_tickets_count" />
+
+                    <TextView
+                        android:id="@+id/inRepairTicketsTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/in_repair_tickets"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCInRepairTickets"
+                        app:layout_constraintVertical_bias="0.533"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <ImageView
+                        android:id="@+id/btnMCRepairedTickets"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCInRepairTickets" />
+
+                    <TextView
+                        android:id="@+id/repairedTicketsCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/in_repair_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCRepairedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCRepairedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCRepairedTickets"
+                        tools:text="@string/in_repair_tickets_count" />
+
+                    <TextView
+                        android:id="@+id/repairedTicketsTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/repaired_tickets"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCRepairedTickets"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCRepairedTickets"
+                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCRepairedTickets"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCRepairedTickets"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <ImageView
+                        android:id="@+id/btnMCChangeOver"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCRepairedTickets" />
+
+                    <TextView
+                        android:id="@+id/changeOverCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/in_repair_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCChangeOver"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCChangeOver"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCChangeOver"
+                        tools:text="@string/in_repair_tickets_count" />
+
+                    <TextView
+                        android:id="@+id/changeOverTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/change_over"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCChangeOver"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCChangeOver"
+                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCChangeOver"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCChangeOver"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <ImageView
+                        android:id="@+id/btnMCLineOverview"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCChangeOver" />
+
+                    <ImageView
+                        android:id="@+id/btnMCReplaceMachine"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCLineOverview" />
+
+                    <ImageView
+                        android:id="@+id/btnMCSetupLine"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCReplaceMachine" />
+
+                    <ImageView
+                        android:id="@+id/btnMCMaintenance"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dashboard_button_height"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnMCSetupLine" />
+
+                    <TextView
+                        android:id="@+id/maintenanceTicketsCountTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/in_repair_tickets_count"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_count_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCMaintenance"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCMaintenance"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCMaintenance"
+                        app:layout_constraintVertical_bias="0.703"
+                        tools:text="@string/in_repair_tickets_count" />
+
+                    <TextView
+                        android:id="@+id/lineOverviewTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/line_overview"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCLineOverview"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCLineOverview"
+                        app:layout_constraintHorizontal_bias="0.068"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCLineOverview"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCLineOverview"
+                        app:layout_constraintVertical_bias="0.555"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <TextView
+                        android:id="@+id/replaceMachineTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/replace_machine"
+                        android:textColor="#FFF"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCReplaceMachine"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCReplaceMachine"
+                        app:layout_constraintHorizontal_bias="0.068"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCReplaceMachine"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCReplaceMachine"
+                        app:layout_constraintVertical_bias="0.555"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <TextView
+                        android:id="@+id/setupLineTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/setup_line"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCSetupLine"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCSetupLine"
+                        app:layout_constraintHorizontal_bias="0.068"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCSetupLine"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCSetupLine"
+                        app:layout_constraintVertical_bias="0.555"
+                        app:translate_textview="@{jTranslate}" />
+
+                    <TextView
+                        android:id="@+id/maintenanceTextViewMC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/maintenance"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dashboard_button_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnMCMaintenance"
+                        app:layout_constraintEnd_toEndOf="@+id/btnMCMaintenance"
+                        app:layout_constraintHorizontal_bias="0.068"
+                        app:layout_constraintStart_toStartOf="@+id/btnMCMaintenance"
+                        app:layout_constraintTop_toTopOf="@+id/btnMCMaintenance"
+                        app:layout_constraintVertical_bias="0.555"
+                        app:translate_textview="@{jTranslate}" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/titleTextViewMC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dashboard_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/lt_mechanic"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dashboard_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:translate_textview="@{jTranslate}" />
+
+            <TextView
+                android:id="@+id/versionMC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dahboard_version_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/version"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dahsboard_version_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextViewMC" />
+
+
+            <TextView
+                android:id="@+id/usernameTextViewMC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dashboard_username_margin_top"
+                android:layout_marginBottom="@dimen/dashboard_username_margin_bottom"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/username"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dashboard_username_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/progress_bar_elevation"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

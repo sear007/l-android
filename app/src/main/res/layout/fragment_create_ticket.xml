@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.lineleader.createticket.CreateTicketFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.lineleader.CreateTicketViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinatorLayout" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="-38dp">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBarTitleTextView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/btnSeeAllProblems"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_all_problem"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="See all problems"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lastReportedProblemTextView" />
+
+                    <TextView
+                        android:id="@+id/lastReportedProblemTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_problem"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="Last reported problem"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commonProblem3TextView" />
+
+                    <TextView
+                        android:id="@+id/commonProblem3TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_problem"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commonProblem2TextView"
+                        tools:text="Common problem 3" />
+
+                    <TextView
+                        android:id="@+id/commonProblem2TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_problem"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commonProblem1TextView"
+                        tools:text="Common problem 2" />
+
+                    <TextView
+                        android:id="@+id/problemTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:text="Problem unknown"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelSelectedProblem"
+                        tools:text="Problem unknown" />
+
+                    <TextView
+                        android:id="@+id/labelSelectedProblem"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Selected problem"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/machineNoTextView" />
+
+                    <TextView
+                        android:id="@+id/labelScanMachine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:text="Scan machine barcode"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/machineNoTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/setup_line_machine_no_margin_top"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                        android:paddingEnd="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelScanMachine"
+                        tools:text="BLKJ 382976" />
+
+                    <TextView
+                        android:id="@+id/commonProblem1TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_problem"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/problemTextView"
+                        tools:text="Common problem 1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+
+
+            <TextView
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="NEXT"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_cancel"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/machineNoToCheckInTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="205dp"
+                android:layout_marginEnd="206dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="183dp"
+                app:layout_constraintGuide_end="205dp"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/create_ticket"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

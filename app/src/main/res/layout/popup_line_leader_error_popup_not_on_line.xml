@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.setupline.SetupLineScanMachineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/btnCancelLineSetup3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/setup_line_button_height"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/cancel_button"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="@string/setup_line_button_cancel"
+            android:textColor="@color/colorButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnScanAgain" />
+
+        <TextView
+            android:id="@+id/labelWhatDoYouWant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/popup_label_enter_machine_number_margin_start"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/popup_label_enter_machine_number_margin_end"
+            android:fontFamily="@font/segoeui"
+            android:text="What do you want to do"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelMachineNotAssigned" />
+
+        <TextView
+            android:id="@+id/btnScanAgain"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/setup_line_button_scan_margin_start"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/setup_line_button_scan_margin_end"
+            android:background="@drawable/scan_button"
+            android:fontFamily="@font/seguibl"
+            android:gravity="center_vertical"
+            android:text="SCAN AGAIN"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/setup_line_button_scan_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelWhatDoYouWant" />
+
+        <TextView
+            android:id="@+id/labelMachineNotAssigned"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/popup_label_enter_machine_number_margin_start"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/popup_label_enter_machine_number_margin_end"
+            android:fontFamily="@font/segoeui"
+            android:text="This machine is not on your assigned lines"
+            android:textColor="@color/colorButton"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

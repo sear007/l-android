@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.maintenance.MaintenanceChecklistFragment">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.MaintenanceChecklistViewmodel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="-38dp">
+
+        <EditText
+            android:id="@+id/remarksEditText"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:fontFamily="@font/segoeui"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:paddingStart="15dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/labelRemarks2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/segoeui"
+            android:text="Remarks"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/remarksEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ticketNo2"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/seguibl"
+            android:gravity="center"
+            android:text="No checklist assigned yet"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBarTitleTextView" />
+
+        <TextView
+            android:id="@+id/tv_add_checklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_reg_blue"
+            android:fontFamily="@font/seguibl"
+            android:gravity="center"
+            android:padding="@dimen/padding_4x"
+            android:text="ADD CHECKLIST"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ticketNo2" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/setup_line_button_height"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_line_setup_edit_button"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="SAVE"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="205dp"
+            android:layout_marginEnd="206dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="183dp"
+            app:layout_constraintGuide_end="205dp"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btnComplete"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/setup_line_button_height"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="COMPLETE"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <TextView
+            android:id="@+id/toolBarTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+            android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+            android:fontFamily="@font/segoeui"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/setup_line_label_title_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="23589797987" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

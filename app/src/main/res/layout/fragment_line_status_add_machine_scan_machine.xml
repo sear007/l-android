@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.linestatus.LineStatusAddMachineScanMachineFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.LineStatusAddMachineScanMachineViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+
+            <TextView
+                android:id="@+id/placeTextView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_scan_machine_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/setup_line_label_scan_machine"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeNoTextView" />
+
+            <TextView
+                android:id="@+id/toolBarSelectedLineTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/setup_line_label_selected_line_margin_end"
+                android:fontFamily="@font/seguibl"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_selected_line_text_size"
+                app:layout_constraintBaseline_toBaselineOf="@+id/toolBarTitleTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="YTI-02" />
+
+            <TextView
+                android:id="@+id/btnKeepEmpty"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_keep_empty_height"
+                android:layout_marginStart="@dimen/setup_line_button_keep_empty_margin_start"
+                android:layout_marginTop="@dimen/setup_line_button_keep_empty_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_button_keep_empty_margin_end"
+                android:background="@drawable/scan_button"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center_vertical"
+                android:text="@string/setup_line_button_keep_empty"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_button_keep_empty_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnScan" />
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="ADD MACHINE"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/toolBarSelectedLineTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/placeNoTextView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_label_place_no_height"
+                android:layout_marginStart="@dimen/setup_line_label_place_no_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_place_no_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_label_place_no_margin_end"
+                android:background="@color/colorButtonBackground"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_label_place_no_padding_start"
+                android:paddingEnd="0dp"
+                tools:text="01"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/toolBarTitleTextView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="89dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="89dp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/placeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_place_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_label_place_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/setup_line_label_place"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_place_text_size"
+                app:layout_constraintBaseline_toBaselineOf="@+id/placeNoTextView"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/btnScan"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_scan_height"
+                android:layout_marginStart="@dimen/setup_line_button_scan_margin_start"
+                android:layout_marginTop="@dimen/setup_line_button_scan_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_button_scan_margin_end"
+                android:background="@drawable/scan_button"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center_vertical"
+                android:text="@string/setup_line_button_scan"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_button_scan_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeTextView8" />
+
+            <ProgressBar
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_centerInParent="true"
+                android:id="@+id/progress_bar"
+                android:visibility="gone"
+                android:elevation="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="marginTop"
+            type="Float" />
+
+        <variable
+            name="isShowMaintDate"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_maint_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_2x"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_x_small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleGone="@{isShowMaintDate}"
+            tools:text="SCHEDULED DATE: 2022-04-17 (1)"
+            tools:textColor="#EC5D6D" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:background="#324C5D"
+            app:layoutMarginTop="@{marginTop}">
+
+            <View
+                android:id="@+id/v_color"
+                android:layout_width="@dimen/margin_1x"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="#4CAF50" />
+
+            <TextView
+                android:id="@+id/tv_machine_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_x_normal"
+                app:layout_constraintStart_toEndOf="@id/v_color"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="LTMC001" />
+
+            <TextView
+                android:id="@+id/tv_ticket_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginEnd="@dimen/margin_1x"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#FFFFFF"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintEnd_toStartOf="@id/v_separate"
+                app:layout_constraintStart_toStartOf="@id/tv_machine_code"
+                app:layout_constraintTop_toBottomOf="@id/tv_machine_code"
+                tools:text="M2211161520-CM01" />
+
+            <TextView
+                android:id="@+id/tv_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_2x"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#FFFFFF"
+                android:alpha="0.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_machine_code"
+                app:layout_constraintTop_toBottomOf="@id/tv_ticket_code"
+                tools:text="Lline 01 - 28" />
+
+            <View
+                android:id="@+id/v_separate"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_10x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginBottom="@dimen/margin_2x"
+                android:background="#8A969E99"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@drawable/rounded"
+                android:ellipsize="middle"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="@dimen/padding_1x"
+                android:textColor="#4CAF50"
+                android:textSize="@dimen/text_x_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/v_separate"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="SCHEDULED" />
+
+            <TextView
+                android:id="@+id/tv_updated_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="@dimen/margin_1x"
+                app:layout_constraintStart_toStartOf="@id/tv_status"
+                app:layout_constraintTop_toBottomOf="@id/tv_status"
+                tools:text="water.m" />
+
+            <TextView
+                android:id="@+id/tv_updated_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#FFFFFF"
+                android:alpha="0.6"
+                app:layout_constraintStart_toStartOf="@id/tv_status"
+                app:layout_constraintTop_toBottomOf="@id/tv_updated_username"
+                tools:text="2022-11-17 09:40" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

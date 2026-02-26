@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.lineleader.sendrequest.SendRequestFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.lineleader.SendRequestViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinatorLayout" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="-38dp">
+
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"
+                android:background="@android:color/white"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelType"
+                tools:text="BLKJ 382976" />
+
+            <TextView
+                android:id="@+id/labelType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="Type"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rfid" />
+
+            <TextView
+                android:id="@+id/machine"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"
+                android:background="@android:color/white"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelMachine"
+                tools:text="BLKJ 382976" />
+
+            <TextView
+                android:id="@+id/btnConfirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="CONFIRM"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_cancel"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="205dp"
+                android:layout_marginEnd="206dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="183dp"
+                app:layout_constraintGuide_end="205dp"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/requestType"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"
+                android:background="@drawable/textview_all_problem"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelSelectedProblem"
+                tools:text="Change machine" />
+
+            <TextView
+                android:id="@+id/labelSelectedProblem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="Select request"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/type" />
+
+            <TextView
+                android:id="@+id/labelMachine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="Machine"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBarTitleTextView" />
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/send_request"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rfid"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/setup_line_machine_no_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_machine_no_margin_end"
+                android:background="@android:color/white"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/setup_line_machine_no_padding_start"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelRfid"
+                tools:text="1234" />
+
+            <TextView
+                android:id="@+id/labelRfid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_scan_machine_margin_start"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/setup_line_label_scan_machine_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="ID"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_scan_machine_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/machine" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/requestTypeRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requestType" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

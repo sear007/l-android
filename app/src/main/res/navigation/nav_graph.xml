@@ -1,0 +1,2582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/changeLanguageFragment">
+
+    <!--Global action-->
+    <action
+        android:id="@+id/action_global_to_ChangeOverFragment"
+        app:destination="@id/nav_change_over"/>
+
+    <action
+        android:id="@+id/action_global_to_MaintFragment"
+        app:destination="@id/nav_maint"/>
+
+    <action
+        android:id="@+id/action_global_to_replaceMachineScanDetailsFragment"
+        app:destination="@id/replaceMachineScanDetailsFragment" />
+
+    <action
+        android:id="@+id/action_global_to_moveMachineFragment"
+        app:destination="@id/moveMachineFragment" />
+
+    <action
+        android:id="@+id/action_global_to_queryMachineFragment"
+        app:destination="@id/queryMachineFragment" />
+
+    <action
+        android:id="@+id/action_global_to_sendRequestFragment"
+        app:destination="@id/sendRequestFragment" />
+
+    <action
+        android:id="@+id/action_global_to_createTicketFragment"
+        app:destination="@id/createTicketFragment" />
+
+    <action
+        android:id="@+id/action_global_to_mechanicHomeFragment"
+        app:destination="@id/mechanicHomeFragment" />
+
+    <action
+        android:id="@+id/action_global_to_lineStatusAddMachineScanMachineDetailsFragment"
+        app:destination="@id/lineStatusAddMachineScanMachineDetailsFragment" />
+
+    <action
+        android:id="@+id/action_global_to_replaceMachineScanDetailsConfirmFragment"
+        app:destination="@id/replaceMachineScanDetailsConfirmFragment" />
+
+    <action
+        android:id="@+id/action_global_to_lineLeaderRepairedTicketsFragment"
+        app:destination="@id/lineLeaderRepairedTicketsFragment" />
+
+    <include app:graph="@navigation/nav_change_over" />
+
+    <include app:graph="@navigation/nav_repair_history" />
+
+    <include app:graph="@navigation/nav_maint" />
+
+    <include app:graph="@navigation/nav_maint_history" />
+
+    <fragment
+        android:id="@+id/lineLeaderHomeFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.LineLeaderHomeFragment"
+        android:label="LineLeaderHomeFragment"
+        tools:layout="@layout/fragment_line_leader_home">
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_lineLeaderHomeFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicHomeFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.MechanicHomeFragment"
+        android:label="MechanicHomeFragment"
+        tools:layout="@layout/fragment_mechanic_home">
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <argument
+            android:name="replaceAction"
+            app:argType="string" />
+        <argument
+            android:name="replaceSuccess"
+            app:argType="boolean" />
+        <argument
+            android:name="replaceMfgLine"
+            app:argType="string" />
+        <argument
+            android:name="replaceStation"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_mechanicHomeFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+        <argument
+            android:name="isFromMoveMC"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupLineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.setupline.SetupLineFragment"
+        android:label="SetupLineFragment">
+        <action
+            android:id="@+id/action_setupLineFragment_to_setupLineScanMachineFragment"
+            app:destination="@id/setupLineScanMachineFragment" />
+        <argument
+            android:name="selectedLine"
+            app:argType="string" />
+        <argument
+            android:name="selectedLines"
+            android:defaultValue=" "
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_setupLineMachineInPlaceDetailsFragment"
+            app:destination="@id/setupLineMachineInPlaceDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_setupLinePlacesFragment"
+            app:destination="@id/setupLinePlacesFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_setupLineFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupLineScanMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.setupline.SetupLineScanMachineFragment"
+        android:label="SetupLineScanMachineFragment"
+        tools:layout="@layout/fragment_setup_line_scan_machine">
+        <argument
+            android:name="selectedLine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLineScanMachineFragment_to_setupLineMachineInPlaceDetailsFragment"
+            app:destination="@id/setupLineMachineInPlaceDetailsFragment"
+            app:popUpTo="@id/setupLineScanMachineFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedPlace"
+            app:argType="string" />
+        <argument
+            android:name="selectedLineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_setupLineScanMachineFragment_self"
+            app:destination="@id/setupLineScanMachineFragment"
+            app:popUpTo="@id/setupLineScanMachineFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLineScanMachineFragment_to_setupLinePlacesFragment"
+            app:destination="@id/setupLinePlacesFragment"
+            app:popUpTo="@id/setupLineScanMachineFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLineScanMachineFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment"
+            app:popUpTo="@id/setupLineFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupLineMachineInPlaceDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.setupline.SetupLineMachineInPlaceDetailsFragment"
+        android:label="SetupLineMachineInPlaceDetailsFragment"
+        tools:layout="@layout/fragment_setup_line_machine_in_place_details">
+        <argument
+            android:name="selectedLine"
+            app:argType="string" />
+        <argument
+            android:name="place"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="machineCode"
+            app:argType="string" />
+        <argument
+            android:name="machineID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLineMachineInPlaceDetailsFragment_to_setupLineScanMachineFragment"
+            app:destination="@id/setupLineScanMachineFragment"
+            app:popUpTo="@id/setupLineMachineInPlaceDetailsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="selectedLineId"
+            app:argType="long" />
+        <argument
+            android:name="existingMachine"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_setupLineMachineInPlaceDetailsFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment"
+            app:popUpTo="@id/setupLineFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLineMachineInPlaceDetailsFragment_self"
+            app:destination="@id/setupLineMachineInPlaceDetailsFragment"
+            app:popUpTo="@id/setupLinePlacesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLineMachineInPlaceDetailsFragment_to_setupLinePlacesFragment"
+            app:destination="@id/setupLinePlacesFragment"
+            app:popUpTo="@id/setupLineMachineInPlaceDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupLinePlacesFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.setupline.SetupLinePlacesFragment"
+        android:label="SetupLinePlacesFragment"
+        tools:layout="@layout/fragment_setup_line_places">
+        <action
+            android:id="@+id/action_setupLinePlacesFragment_to_setupLineMachineInPlaceDetailsFragment"
+            app:destination="@id/setupLineMachineInPlaceDetailsFragment" />
+        <action
+            android:id="@+id/action_setupLinePlacesFragment_to_setupLineScanMachineFragment"
+            app:destination="@id/setupLineScanMachineFragment"
+            app:popUpTo="@id/setupLinePlacesFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLinePlacesFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment"
+            app:popUpTo="@id/setupLineFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedLineId"
+            app:argType="long" />
+        <argument
+            android:name="selectedLine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_setupLinePlacesFragment_to_setupLineMachineDetailsWithScanFragment"
+            app:destination="@id/setupLineMachineDetailsWithScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupLineMachineDetailsWithScanFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.setupline.SetupLineMachineDetailsWithScanFragment"
+        android:label="SetupLineMachineDetailsWithScanFragment"
+        tools:layout="@layout/fragment_setup_line_machine_details_with_scan">
+        <argument
+            android:name="existingMachine"
+            app:argType="boolean" />
+        <argument
+            android:name="machineID"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_setupLineMachineDetailsWithScanFragment_to_setupLinePlacesFragment"
+            app:destination="@id/setupLinePlacesFragment"
+            app:popUpTo="@id/setupLinePlacesFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLineMachineDetailsWithScanFragment_self"
+            app:destination="@id/setupLineMachineDetailsWithScanFragment"
+            app:popUpTo="@id/setupLineMachineDetailsWithScanFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLineMachineDetailsWithScanFragment_to_setupLineScanMachineFragment"
+            app:destination="@id/setupLineScanMachineFragment"
+            app:popUpTo="@id/setupLineMachineDetailsWithScanFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupLineMachineDetailsWithScanFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment"
+            app:popUpTo="@id/setupLineFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <argument
+            android:name="showNextButton"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusFragment"
+        android:label="LineStatusFragment"
+        tools:layout="@layout/fragment_line_status">
+        <action
+            android:id="@+id/action_lineStatusFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_lineStatusFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusStationsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusStationsFragment"
+        android:label="LineStatusStationsFragment"
+        tools:layout="@layout/fragment_line_status_stations">
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusStationsFragment_to_lineStatusStationDetailsFragment"
+            app:destination="@id/lineStatusStationDetailsFragment" />
+        <argument
+            android:name="addMachineSuccess"
+            app:argType="boolean" />
+        <argument
+            android:name="addMachineMachine"
+            app:argType="string" />
+        <argument
+            android:name="addMachineStation"
+            app:argType="string" />
+        <argument
+            android:name="isRemoveMachineFromLineStationDetails"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusStationDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusStationDetailsFragment"
+        android:label="LineStatusStationDetailsFragment"
+        tools:layout="@layout/fragment_line_status_station_details">
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusReplaceMachineFragment"
+            app:destination="@id/lineStatusReplaceMachineFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusReplaceMachineScanDetailsFragment"
+            app:destination="@id/lineStatusReplaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusInsertScanMachineFragment"
+            app:destination="@id/lineStatusInsertScanMachineFragment" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusAddMachineScanMachineFragment"
+            app:destination="@id/lineStatusAddMachineScanMachineFragment" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusAddMachineScanMachineDetailsFragment"
+            app:destination="@id/lineStatusAddMachineScanMachineDetailsFragment" />
+        <action
+            android:id="@+id/action_lineStatusStationDetailsFragment_to_lineStatusNextMachineAScanMachineFragment"
+            app:destination="@id/lineStatusNextMachineAScanMachineFragment" />
+        <argument
+            android:name="showNextButton"
+            app:argType="boolean" />
+        <argument
+            android:name="endStation"
+            app:argType="boolean" />
+        <argument
+            android:name="building"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="buildingId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/replaceMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.replacemachine.ReplaceMachineFragment"
+        android:label="ReplaceMachineFragment"
+        tools:layout="@layout/fragment_replace_machine">
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_mechanicInRepairTicketsFragment2"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_self"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_self2"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineFragment_to_replaceMachineScanDetailsFragment2"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/replaceMachineScanDetailsConfirmFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.replacemachine.ReplaceMachineScanDetailsConfirmFragment"
+        android:label="ReplaceMachineScanDetailsConfirmFragment"
+        tools:layout="@layout/fragment_replace_machine_scan_details_confirm">
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsConfirmFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment"
+            app:popUpTo="@id/replaceMachineFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machineIdToCheckIn"
+            app:argType="long" />
+        <argument
+            android:name="machineToCheckIn"
+            app:argType="string" />
+        <argument
+            android:name="scannedMachineStation"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsConfirmFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment"
+            app:popUpTo="@id/mechanicHomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/replaceMachineScanDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.replacemachine.ReplaceMachineScanDetailsFragment"
+        android:label="ReplaceMachineScanDetailsFragment"
+        tools:layout="@layout/fragment_replace_machine_scan_details">
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_replaceMachineScanDetailsConfirmFragment"
+            app:destination="@id/replaceMachineScanDetailsConfirmFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment"
+            app:popUpTo="@id/replaceMachineFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment"
+            app:popUpTo="@id/mechanicHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_mechanicReportedTicketsFragment2"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_self"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_replaceMachineScanDetailsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusReplaceMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusReplaceMachineFragment"
+        android:label="LineStatusReplaceMachineFragment"
+        tools:layout="@layout/fragment_line_status_replace_machine">
+
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusReplaceMachineFragment_to_lineStatusReplaceMachineScanDetailsFragment"
+            app:destination="@id/lineStatusReplaceMachineScanDetailsFragment"
+            app:popUpTo="@id/lineStatusReplaceMachineFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusReplaceMachineScanDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusReplaceMachineScanDetailsFragment"
+        android:label="LineStatusReplaceMachineScanDetailsFragment"
+        tools:layout="@layout/fragment_line_status_replace_machine_scan_details">
+
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_lineStatusReplaceMachineScanDetailsFragment_to_lineStatusReplaceMachineScanDetailsConfirmFragment"
+            app:destination="@id/lineStatusReplaceMachineScanDetailsConfirmFragment" />
+        <action
+            android:id="@+id/action_lineStatusReplaceMachineScanDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusReplaceMachineScanDetailsConfirmFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusReplaceMachineScanDetailsConfirmFragment"
+        android:label="LineStatusReplaceMachineScanDetailsConfirmFragment"
+        tools:layout="@layout/fragment_line_status_replace_machine_scan_details_confirm">
+
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machineIdToCheckIn"
+            app:argType="long" />
+        <argument
+            android:name="machineToCheckIn"
+            app:argType="string" />
+        <argument
+            android:name="scannedMachineStation"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusReplaceMachineScanDetailsConfirmFragment_to_lineStatusReplaceMachineFragment"
+            app:destination="@id/lineStatusReplaceMachineFragment"
+            app:popUpTo="@id/lineStatusReplaceMachineFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lineStatusReplaceMachineScanDetailsConfirmFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusInsertScanMachineDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusInsertScanMachineDetailsFragment"
+        android:label="LineStatusInsertScanMachineDetailsFragment"
+        tools:layout="@layout/fragment_line_status_insert_scan_machine_details">
+        <action
+            android:id="@+id/action_lineStatusInsertScanMachineDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <argument
+            android:name="actionTitle"
+            app:argType="string" />
+        <argument
+            android:name="actionName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusInsertScanMachineDetailsFragment_to_lineStatusInsertNextMachineAScanMachineFragment"
+            app:destination="@id/lineStatusInsertNextMachineAScanMachineFragment"
+            app:popUpTo="@id/lineStatusInsertNextMachineAScanMachineFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusInsertScanMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusInsertScanMachineFragment"
+        android:label="LineStatusInsertScanMachineFragment"
+        tools:layout="@layout/fragment_line_status_insert_scan_machine">
+        <action
+            android:id="@+id/action_lineStatusInsertScanMachineFragment_to_lineStatusInsertScanMachineDetailsFragment"
+            app:destination="@id/lineStatusInsertScanMachineDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="actionTitle"
+            app:argType="string" />
+        <argument
+            android:name="actionName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusInsertScanMachineFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment" />
+        <argument
+            android:name="endStation"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusAddMachineScanMachineDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusAddMachineScanMachineDetailsFragment"
+        android:label="LineStatusAddMachineScanMachineDetailsFragment"
+        tools:layout="@layout/fragment_line_status_add_machine_scan_machine_details">
+        <action
+            android:id="@+id/action_lineStatusAddMachineScanMachineDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="rfId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusAddMachineScanMachineDetailsFragment_to_lineStatusAddMachineNextMachineAFragment"
+            app:destination="@id/lineStatusAddMachineNextMachineAFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusAddMachineScanMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusAddMachineScanMachineFragment"
+        android:label="LineStatusAddMachineScanMachineFragment"
+        tools:layout="@layout/fragment_line_status_add_machine_scan_machine">
+        <action
+            android:id="@+id/action_lineStatusAddMachineScanMachineFragment_to_lineStatusAddMachineScanMachineDetailsFragment"
+            app:destination="@id/lineStatusAddMachineScanMachineDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusAddMachineNextMachineAFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusAddMachineNextMachineAFragment"
+        android:label="LineStatusAddMachineNextMachineAFragment"
+        tools:layout="@layout/fragment_line_status_add_machine_next_machine_a">
+        <action
+            android:id="@+id/action_lineStatusAddMachineNextMachineAFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusNextMachineAScanMachineDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusNextMachineAScanMachineDetailsFragment"
+        android:label="LineStatusNextMachineAScanMachineDetailsFragment"
+        tools:layout="@layout/fragment_line_status_next_machine_a_scan_machine_details">
+        <action
+            android:id="@+id/action_lineStatusNextMachineAScanMachineDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusNextMachineAScanMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusNextMachineAScanMachineFragment"
+        android:label="LineStatusNextMachineAScanMachineFragment"
+        tools:layout="@layout/fragment_line_status_next_machine_a_scan_machine">
+        <action
+            android:id="@+id/action_lineStatusNextMachineAScanMachineFragment_to_lineStatusNextMachineAScanMachineDetailsFragment"
+            app:destination="@id/lineStatusNextMachineAScanMachineDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusInsertNextMachineAScanMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusInsertNextMachineAScanMachineFragment"
+        android:label="LineStatusInsertNextMachineAScanMachineFragment"
+        tools:layout="@layout/fragment_line_status_insert_next_machine_a_scan_machine">
+        <action
+            android:id="@+id/action_lineStatusInsertNextMachineAScanMachineFragment_to_lineStatusInsertNextMachineScanMachineDetailsFragment"
+            app:destination="@id/lineStatusInsertNextMachineScanMachineDetailsFragment" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineStatusInsertNextMachineAScanMachineFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineStatusInsertNextMachineScanMachineDetailsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.linestatus.LineStatusInsertNextMachineScanMachineDetailsFragment"
+        android:label="LineStatusInsertNextMachineScanMachineDetailsFragment"
+        tools:layout="@layout/fragment_line_status_insert_next_machine_scan_machine_details">
+        <action
+            android:id="@+id/action_lineStatusInsertNextMachineScanMachineDetailsFragment_to_lineStatusStationsFragment"
+            app:destination="@id/lineStatusStationsFragment"
+            app:popUpTo="@id/lineStatusStationsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.createticket.CreateTicketFragment"
+        android:label="CreateTicketFragment"
+        tools:layout="@layout/fragment_create_ticket">
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="commonProblems"
+            app:argType="long" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_createTicketAttachFragment"
+            app:destination="@id/createTicketAttachFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_self"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketAttachFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.createticket.CreateTicketAttachFragment"
+        android:label="CreateTicketAttachFragment"
+        tools:layout="@layout/fragment_create_ticket_attach">
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_createTicketAttachFragment_to_createTicketPreviewFragment"
+            app:destination="@id/createTicketPreviewFragment" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketPreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.createticket.CreateTicketPreviewFragment"
+        android:label="CreateTicketPreviewFragment"
+        tools:layout="@layout/fragment_create_ticket_preview">
+        <action
+            android:id="@+id/action_createTicketPreviewFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment"
+            app:popUpTo="@id/lineLeaderHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_createTicketPreviewFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment"
+            app:popUpTo="@id/mechanicHomeFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="lineStation"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment1Url"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment2Url"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment3Url"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachment1Url"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_createTicketPreviewFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment"
+            app:popUpTo="@id/lineLeaderReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_createTicketPreviewFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment"
+            app:popUpTo="@id/lineLeaderInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_createTicketPreviewFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment"
+            app:popUpTo="@id/lineLeaderRepairedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+        <argument
+            android:name="notificationTopic"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsFragment"
+        android:label="MechanicReportedTicketsFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets">
+        <!--Reopened or Reported-->
+        <argument
+            android:name="ticket_type"
+            android:defaultValue="REPORTED"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_mechanicReportedTicketsPreviewFragment"
+            app:destination="@id/mechanicReportedTicketsPreviewFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_mechanicCreateTicketFragment"
+            app:destination="@id/mechanicCreateTicketFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsPreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsPreviewFragment"
+        android:label="MechanicReportedTicketsPreviewFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_preview">
+        <action
+            android:id="@+id/action_mechanicReportedTicketsPreviewFragment_to_mechanicReportedTicketsConfirmFragment"
+            app:destination="@id/mechanicReportedTicketsConfirmFragment"
+            app:popUpTo="@id/mechanicReportedTicketsPreviewFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsPreviewFragment_to_mechanicReportedTicketsMachineHistoryFragment"
+            app:destination="@id/mechanicReportedTicketsMachineHistoryFragment" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsPreviewFragment_to_mechanicReportedTicketsAlternativeMachineLocationsFragment"
+            app:destination="@id/mechanicReportedTicketsAlternativeMachineLocationsFragment" />
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="place"
+            app:argType="string" />
+        <argument
+            android:name="reportedPlace"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl1"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl2"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl3"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachmentUrl"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="solutionTypeId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsPreviewFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment"
+            app:popUpTo="@id/mechanicReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="brand"
+            app:argType="string" />
+        <argument
+            android:name="reportedTime"
+            app:argType="string" />
+        <argument
+            android:name="grabbedTime"
+            app:argType="string" />
+        <argument
+            android:name="repairedTime"
+            app:argType="string" />
+        <argument
+            android:name="closedTime"
+            app:argType="string" />
+        <argument
+            android:name="elapsedDuration"
+            app:argType="string" />
+
+        <argument
+            android:name="nextMainDate"
+            app:argType="co.ltlabs.ltmechanic.domain.NextMainDate"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsConfirmFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsConfirmFragment"
+        android:label="MechanicReportedTicketsConfirmFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_confirm">
+        <action
+            android:id="@+id/action_mechanicReportedTicketsConfirmFragment_to_mechanicReportedTicketsChecklistFragment"
+            app:destination="@id/mechanicReportedTicketsChecklistFragment" />
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="solutionTypeId"
+            app:argType="long" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsConfirmFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment"
+            app:popUpTo="@id/mechanicReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsChecklistFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsChecklistFragment"
+        android:label="MechanicReportedTicketsChecklistFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_checklist">
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_mechanicReportedTicketsChecklistFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment"
+            app:popUpTo="@id/mechanicReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsMachineHistoryFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsMachineHistoryFragment"
+        android:label="MechanicReportedTicketsMachineHistoryFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_machine_history">
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsAlternativeMachineLocationsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsAlternativeMachineLocationsFragment"
+        android:label="MechanicReportedTicketsAlternativeMachineLocationsFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_alternative_machine_locations">
+        <action
+            android:id="@+id/action_mechanicReportedTicketsAlternativeMachineLocationsFragment_to_mechanicReportedTicketsAlternativeMachinesFragment"
+            app:destination="@id/mechanicReportedTicketsAlternativeMachinesFragment" />
+        <argument
+            android:name="macSubTypeId"
+            app:argType="long" />
+        <argument
+            android:name="brandId"
+            app:argType="long" />
+        <argument
+            android:name="brand"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicReportedTicketsAlternativeMachinesFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.reportedtickets.MechanicReportedTicketsAlternativeMachinesFragment"
+        android:label="MechanicReportedTicketsAlternativeMachinesFragment"
+        tools:layout="@layout/fragment_mechanic_reported_tickets_alternative_machines">
+        <argument
+            android:name="macSubTypeId"
+            app:argType="long" />
+        <argument
+            android:name="brandId"
+            app:argType="long" />
+        <argument
+            android:name="brand"
+            app:argType="string" />
+        <argument
+            android:name="areaId"
+            app:argType="long" />
+        <argument
+            android:name="area"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicInRepairTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.inrepairtickets.MechanicInRepairTicketsFragment"
+        android:label="MechanicInRepairTicketsFragment"
+        tools:layout="@layout/fragment_mechanic_in_repair_tickets">
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_mechanicInRepairTicketsPreviewFragment"
+            app:destination="@id/mechanicInRepairTicketsPreviewFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_mechanicCreateTicketFragment"
+            app:destination="@id/mechanicCreateTicketFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicRepairedTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.repairedtickets.MechanicRepairedTicketsFragment"
+        android:label="MechanicRepairedTicketsFragment"
+        tools:layout="@layout/fragment_mechanic_repaired_tickets">
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_mechanicRepairedTicketsChecklistFragment"
+            app:destination="@id/mechanicRepairedTicketsChecklistFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_mechanicCreateTicketFragment"
+            app:destination="@id/mechanicCreateTicketFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_to_mechanicInRepairTicketsPreviewFragment"
+        app:destination="@id/mechanicInRepairTicketsPreviewFragment" />
+
+    <fragment
+        android:id="@+id/mechanicInRepairTicketsPreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.inrepairtickets.MechanicInRepairTicketsPreviewFragment"
+        android:label="MechanicInRepairTicketsPreviewFragment"
+        tools:layout="@layout/fragment_mechanic_in_repair_tickets_preview">
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="place"
+            app:argType="string" />
+        <argument
+            android:name="reportedPlace"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl1"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl2"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl3"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachmentUrl"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="solutionTypeId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsPreviewFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment"
+            app:popUpTo="@id/mechanicInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsPreviewFragment_to_mechanicReportedTicketsMachineHistoryFragment"
+            app:destination="@id/mechanicReportedTicketsMachineHistoryFragment" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsPreviewFragment_to_mechanicReportedTicketsAlternativeMachineLocationsFragment"
+            app:destination="@id/mechanicReportedTicketsAlternativeMachineLocationsFragment" />
+        <argument
+            android:name="brand"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsPreviewFragment_to_mechanicInRepairTicketsConfirmFragment"
+            app:destination="@id/mechanicInRepairTicketsConfirmFragment" />
+        <argument
+            android:name="reportedTime"
+            app:argType="string" />
+        <argument
+            android:name="grabbedTime"
+            app:argType="string" />
+        <argument
+            android:name="repairedTime"
+            app:argType="string" />
+        <argument
+            android:name="closedTime"
+            app:argType="string" />
+        <argument
+            android:name="elapsedDuration"
+            app:argType="string" />
+        <argument
+            android:name="nextMainDate"
+            app:argType="co.ltlabs.ltmechanic.domain.NextMainDate"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicInRepairTicketsConfirmFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.inrepairtickets.MechanicInRepairTicketsConfirmFragment"
+        android:label="MechanicInRepairTicketsConfirmFragment"
+        tools:layout="@layout/fragment_mechanic_in_repair_tickets_confirm">
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="solutionTypeId"
+            app:argType="long" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsConfirmFragment_to_mechanicInRepairTicketsChecklistFragment2"
+            app:destination="@id/mechanicInRepairTicketsChecklistFragment2" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsConfirmFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment"
+            app:popUpTo="@id/mechanicInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicInRepairTicketsChecklistFragment2"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.inrepairtickets.MechanicInRepairTicketsChecklistFragment"
+        android:label="MechanicInRepairTicketsChecklistFragment"
+        tools:layout="@layout/fragment_mechanic_in_repair_tickets_checklist">
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_mechanicInRepairTicketsChecklistFragment2_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment"
+            app:popUpTo="@id/mechanicInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicRepairedTicketsChecklistFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.repairedtickets.MechanicRepairedTicketsChecklistFragment"
+        android:label="MechanicRepairedTicketsChecklistFragment"
+        tools:layout="@layout/fragment_mechanic_repaired_tickets_checklist">
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_mechanicRepairedTicketsChecklistFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment"
+            app:popUpTo="@id/mechanicRepairedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicCreateTicketAttachFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.createticket.MechanicCreateTicketAttachFragment"
+        android:label="MechanicCreateTicketAttachFragment"
+        tools:layout="@layout/fragment_mechanic_create_ticket_attach">
+        <action
+            android:id="@+id/action_mechanicCreateTicketAttachFragment_to_mechanicCreateTicketPreviewFragment"
+            app:destination="@id/mechanicCreateTicketPreviewFragment" />
+
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicCreateTicketFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.createticket.MechanicCreateTicketFragment"
+        android:label="MechanicCreateTicketFragment"
+        tools:layout="@layout/fragment_mechanic_create_ticket">
+        <action
+            android:id="@+id/action_mechanicCreateTicketFragment_to_mechanicCreateTicketAttachFragment"
+            app:destination="@id/mechanicCreateTicketAttachFragment" />
+
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="commonProblems"
+            app:argType="long" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mechanicCreateTicketPreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.createticket.MechanicCreateTicketPreviewFragment"
+        android:label="MechanicCreateTicketPreviewFragment"
+        tools:layout="@layout/fragment_mechanic_create_ticket_preview">
+        <action
+            android:id="@+id/action_mechanicCreateTicketPreviewFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment"
+            app:popUpTo="@id/mechanicReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mechanicCreateTicketPreviewFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment"
+            app:popUpTo="@id/mechanicInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mechanicCreateTicketPreviewFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment"
+            app:popUpTo="@id/mechanicRepairedTicketsFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="lineStation"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment1Url"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment2Url"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachment3Url"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachment1Url"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineLeaderReportedTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.reportedtickets.LineLeaderReportedTicketsFragment"
+        android:label="LineLeaderReportedTicketsFragment"
+        tools:layout="@layout/fragment_line_leader_reported_tickets">
+
+        <!--Reopened or Reported-->
+        <argument
+            android:name="ticket_type"
+            android:defaultValue="REPORTED"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_lineLeaderTicketPreviewFragment"
+            app:destination="@id/lineLeaderTicketPreviewFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_lineLeaderReportedTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineLeaderInRepairTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.inrepairtickets.LineLeaderInRepairTicketsFragment"
+        android:label="LineLeaderInRepairTicketsFragment"
+        tools:layout="@layout/fragment_line_leader_in_repair_tickets">
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_lineLeaderTicketPreviewFragment"
+            app:destination="@id/lineLeaderTicketPreviewFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_lineLeaderInRepairTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineLeaderRepairedTicketsFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.repairedtickets.LineLeaderRepairedTicketsFragment"
+        android:label="LineLeaderRepairedTicketsFragment"
+        tools:layout="@layout/fragment_line_leader_repaired_tickets">
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_lineLeaderTicketPreviewFragment"
+            app:destination="@id/lineLeaderTicketPreviewFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_lineLeaderRepairedTicketsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+        <argument
+            android:name="isClosedTicket"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineLeaderTicketChecklistFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.shared.LineLeaderTicketChecklistFragment"
+        android:label="LineLeaderTicketChecklistFragment"
+        tools:layout="@layout/fragment_line_leader_ticket_checklist">
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_to_lineLeaderTicketPreviewFragment"
+        app:destination="@id/lineLeaderTicketPreviewFragment" />
+
+    <fragment
+        android:id="@+id/lineLeaderTicketPreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.shared.LineLeaderTicketPreviewFragment"
+        android:label="LineLeaderTicketPreviewFragment"
+        tools:layout="@layout/fragment_line_leader_ticket_preview">
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="machineNo"
+            app:argType="string" />
+        <argument
+            android:name="problem"
+            app:argType="string" />
+        <argument
+            android:name="remarks"
+            app:argType="string" />
+        <argument
+            android:name="solution"
+            app:argType="string" />
+        <argument
+            android:name="place"
+            app:argType="string" />
+        <argument
+            android:name="reportedPlace"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl1"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl2"
+            app:argType="string" />
+        <argument
+            android:name="imageAttachmentUrl3"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachmentUrl"
+            app:argType="string" />
+        <argument
+            android:name="videoAttachmentUrl2"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="problemTypeId"
+            app:argType="long" />
+        <argument
+            android:name="solutionTypeId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderTicketChecklistFragment"
+            app:destination="@id/lineLeaderTicketChecklistFragment" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment"
+            app:popUpTo="@id/lineLeaderRepairedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderInRepairTicketsFragment2"
+            app:destination="@id/lineLeaderInRepairTicketsFragment"
+            app:popUpTo="@id/lineLeaderInRepairTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment"
+            app:popUpTo="@id/lineLeaderReportedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lineLeaderTicketPreviewFragment_to_lineLeaderReportedTicketsFragment2"
+            app:destination="@id/lineLeaderReportedTicketsFragment"
+            app:popUpTo="@id/lineLeaderRepairedTicketsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="reportedTime"
+            app:argType="string" />
+        <argument
+            android:name="grabbedTime"
+            app:argType="string" />
+        <argument
+            android:name="repairedTime"
+            app:argType="string" />
+        <argument
+            android:name="closedTime"
+            app:argType="string" />
+        <argument
+            android:name="elapsedDuration"
+            app:argType="string" />
+
+        <argument
+            android:name="nextMainDate"
+            app:argType="co.ltlabs.ltmechanic.domain.NextMainDate"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/moveMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.shared.MoveMachineFragment"
+        android:label="MoveMachineFragment"
+        tools:layout="@layout/fragment_move_machine">
+        <action
+            android:id="@+id/action_moveMachineFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_replaceMachineFragment"
+            app:destination="@id/replaceMachineFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_mechanicHomeFragment2"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_self"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_moveMachineFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="station"
+            app:argType="string" />
+        <argument
+            android:name="mfgLine"
+            app:argType="string" />
+        <argument
+            android:name="buildingName"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+        <argument
+            android:name="buildingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/queryMachineFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.shared.QueryMachineFragment"
+        android:label="QueryMachineFragment"
+        tools:layout="@layout/fragment_query_machine">
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_notificationFragment2"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_self"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_repairHistoryFragment"
+            app:destination="@id/nav_repair_history" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_maintenanceHistoryFragment"
+            app:destination="@id/nav_maint_history" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_queryMachineFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.shared.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification">
+        <action
+            android:id="@+id/action_notificationFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_queryMachineFragment2"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_notificationFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendRequestFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.lineleader.sendrequest.SendRequestFragment"
+        android:label="SendRequestFragment"
+        tools:layout="@layout/fragment_send_request">
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="machine"
+            app:argType="string" />
+        <argument
+            android:name="rfid"
+            app:argType="string" />
+        <argument
+            android:name="subType"
+            app:argType="string" />
+        <argument
+            android:name="mfgLineId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_self"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_sendRequestFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.ChangePasswordFragment"
+        android:label="ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password">
+        <action
+            android:id="@+id/action_changePasswordFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeFactoryFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.shared.ChangeFactoryFragment"
+        android:label="ChangeFactoryFragment"
+        tools:layout="@layout/fragment_change_factory">
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment"
+            app:popUpTo="@id/lineLeaderHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment"
+            app:popUpTo="@id/mechanicHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_changeFactoryFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeLanguageFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.ChangeLanguageFragment"
+        android:label="ChangeLanguageFragment"
+        tools:layout="@layout/fragment_change_language">
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_lineLeaderRepairedTicketsFragment"
+            app:destination="@id/lineLeaderRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_lineLeaderInRepairTicketsFragment"
+            app:destination="@id/lineLeaderInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_lineLeaderReportedTicketsFragment"
+            app:destination="@id/lineLeaderReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_lineLeaderHomeFragment"
+            app:destination="@id/lineLeaderHomeFragment"
+            app:popUpTo="@id/lineLeaderHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_mechanicHomeFragment"
+            app:destination="@id/mechanicHomeFragment"
+            app:popUpTo="@id/mechanicHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_setupLineFragment"
+            app:destination="@id/setupLineFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_lineStatusFragment"
+            app:destination="@id/lineStatusFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_replaceMachineScanDetailsFragment"
+            app:destination="@id/replaceMachineScanDetailsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_mechanicReportedTicketsFragment"
+            app:destination="@id/mechanicReportedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_mechanicInRepairTicketsFragment"
+            app:destination="@id/mechanicInRepairTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_mechanicRepairedTicketsFragment"
+            app:destination="@id/mechanicRepairedTicketsFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_moveMachineFragment"
+            app:destination="@id/moveMachineFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_queryMachineFragment"
+            app:destination="@id/queryMachineFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_sendRequestFragment"
+            app:destination="@id/sendRequestFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_changeFactoryFragment"
+            app:destination="@id/changeFactoryFragment" />
+    </fragment>
+</navigation>

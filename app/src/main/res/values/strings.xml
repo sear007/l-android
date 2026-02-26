@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">LTMechanic</string>
+
+    <string name="powered_by">Powered by</string>
+    <string name="company_code">Company Code <font color='#FF0000'>*</font></string>
+    <string name="please_enter_your_company_code">Please enter your company code</string>
+    <string name="sign_in_to_your_ltlabs_account">Sign In to your LTLabs Account</string>
+    <string name="next">NEXT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_ticket">CREATE TICKET</string>
+    <string name="reported_tickets">REPORTED TICKETS</string>
+    <string name="reopened_tickets">REOPENED TICKETS</string>
+    <string name="in_repair_tickets">IN-REPAIR TICKETS</string>
+    <string name="machines">MACHINES</string>
+    <string name="query_machine">QUERY MACHINE</string>
+    <string name="send_request">SEND REQUEST</string>
+    <string name="line_overview">LINE OVERVIEW</string>
+    <string name="setup_line">SETUP LINE</string>
+    <string name="maintenance">MAINTENANCE</string>
+    <string name="lt_mechanic">LT Mechanic</string>
+    <string name="line_leader">Line Leader</string>
+    <string name="mechanic">Mechanic</string>
+    <string name="reported_tickets_count">0</string>
+    <string name="in_repair_tickets_count">0</string>
+    <string name="repair_tickets_count">0</string>
+    <string name="machines_count">%1$s/%2$s</string>
+    <string name="username">JOHN DOE</string>
+    <string name="version">14.42</string>
+    <string name="select">SELECT</string>
+    <string name="line_others">...</string>
+    <string name="popup_close_button_text">X</string>
+    <string name="popup_label_select_lines">Select line(s)</string>
+    <string name="popup_hint_search">search</string>
+    <string name="popup_label_show_all_lines">SHOWING ALL LINES</string>
+    <string name="popup_label_no_results">No Lines Found</string>
+    <string name="popup_label_no_results_problems">No Problem Found</string>
+    <string name="setup_line_label_title">SET UP LINE</string>
+    <string name="setup_line_label_confirm_sewing_line">Confirm sewing line</string>
+    <string name="setup_line_button_change_line">CHANGE LINE</string>
+    <string name="setup_line_button_clear_line">CLEAR LINE</string>
+    <string name="setup_line_button_continue">CONTINUE</string>
+    <string name="setup_line_label_place">Place</string>
+    <string name="setup_line_label_scan_machine">Scan machine</string>
+    <string name="setup_line_button_scan">SCAN</string>
+    <string name="setup_line_button_keep_empty">KEEP EMPTY</string>
+    <string name="setup_line_button_finish_line">FINISH LINE</string>
+    <string name="setup_line_label_machine">Machine</string>
+    <string name="setup_line_label_rfid">ID</string>
+    <string name="setup_line_label_type">Type</string>
+    <string name="setup_line_confirm_and_open">CONFIRM AND OPEN 01-A</string>
+    <string name="setup_line_button_cancel">CANCEL</string>
+    <string name="setup_line_button_confirm">CONFIRM</string>
+    <string name="setup_line_button_edit">EDIT</string>
+    <string name="popup_label_enter_machine_number">Enter machine number</string>
+    <string name="popup_button_tap_nfc">TAP NFC</string>
+    <string name="popup_button_barcode_scanner">BARCODE SCANNER</string>
+    <string name="popup_button_camera_scanner">CAMERA SCANNER</string>
+    <string name="line_status">LINE OVERVIEW</string>
+    <string name="line_status_line_count">%1$s (%2$s)</string>
+    <string name="line_status_place">PLACE %1$s</string>
+    <string name="check_in_new_machine">+ %1$s</string>
+    <string name="add_machine">ADD</string>
+    <string name="replace_machine">REPLACE MACHINE</string>
+    <string name="keep_empty_confirmation_message">Are you sure you want to empty Line %1$s %2$s?</string>
+    <string name="remove_machine_confirmation_message">Are you sure you want to remove machine %1$s?</string>
+    <string name="okay">OKAY</string>
+    <string name="location_machine_count">(%1$s)</string>
+    <string name="checklist_steps">%1$s/%2$s</string>
+    <string name="steps">STEPS</string>
+    <string name="move_machine">MOVE MACHINE</string>
+    <string name="change_language">CHANGE LANGUAGE</string>
+    <string name="repaired_tickets">REPAIRED TICKETS</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="notification_with_count">NOTIFICATION (%1$s)</string>
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+    <string name="change_factory">CHANGE FACTORY</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="popup_label_no_results_found">No match item</string>
+    <string name="select_item">Select Item</string>
+    <string name="select_item_of_problem">Select Problem</string>
+    <string name="select_item_of_solution">Select Solution</string>
+    <string name="close">CLOSE</string>
+    <string name="select_machine_problem">Select machine problem</string>
+    <string name="view_line_list">VIEW LINE LIST</string>
+    <string name="welcome_to_ltm">Welcome to LTmechanic</string>
+    <string name="sign_in_to_suntex_limited">Sign in to</string>
+    <string name="company_code_stx">Company Code:</string>
+    <string name="please_enter_your_login_information">Please enter your login information</string>
+    <string name="user_id_email_address">User ID / Email Address <font color='#FF0000'>*</font></string>
+    <string name="password">Password <font color='#FF0000'>*</font></string>
+    <string name="sign_in">Sign in</string>
+    <string name="remember_me">Remember me</string>
+    <string name="ltie_version_1_0">Version 1.0</string>
+    <string name="solution">Solution</string>
+    <string name="selected_problem">Selected problem</string>
+
+    <string name="fake_string" translatable="false"> </string>
+
+    <!--Change Over Requests-->
+    <string name="change_over" translatable="false">CHANGEOVER REQUESTS</string>
+    <string name="open">OPEN</string>
+    <string name="ready">READY</string>
+    <string name="closed">CLOSED</string>
+    <string name="search">Search</string>
+    <string name="machine_count">M/C %s</string>
+    <string name="machine_summary">MACHINE\nSUMMARY</string>
+    <string name="information_status">STN\t\t M/C INFORMATION &amp; STATUS</string>
+
+    <!--Maintenance ticket-->
+    <string name="maintenance_ticket">Maintenance Tickets</string>
+
+</resources>

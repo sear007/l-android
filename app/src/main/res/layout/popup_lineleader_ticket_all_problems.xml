@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.lineleader.LineListWindowFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.lineleader.LineLeaderHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/noResultsTextViewLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/popup_label_no_results_problems"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/popup_label_no_results_text_size"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linesearchEditTextLL" />
+
+        <TextView
+            android:id="@+id/closePopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/popup_close_button_margin_top"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/popup_close_button_text"
+            android:textSize="@dimen/popup_close_button_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelSelectMachineProblem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/popup_label_select_lines_margin_start"
+            android:layout_marginEnd="@dimen/popup_label_select_lines_margin_end"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/select_machine_problem"
+            android:textColor="@color/textButtonColor"
+            android:textSize="@dimen/popup_label_select_lines_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closePopup" />
+
+        <EditText
+            android:id="@+id/linesearchEditTextLL"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/popup_search_bar_height"
+            android:layout_marginStart="@dimen/popup_search_bar_margin_start"
+            android:layout_marginTop="@dimen/popup_search_bar_margin_top"
+            android:layout_marginEnd="@dimen/popup_search_bar_margin_end"
+            android:background="@drawable/edit_text"
+            android:ems="10"
+            android:hint="@string/popup_hint_search"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelSelectMachineProblem" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/popup_recyclerview_margin_start"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/popup_recyclerview_margin_end"
+            android:layout_marginBottom="@dimen/popup_recyclerview_margin_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/btnLLSelectLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linesearchEditTextLL" />
+
+        <Button
+            android:id="@+id/btnLLSelectLine"
+            android:layout_width="@dimen/popup_button_select_width"
+            android:layout_height="@dimen/popup_button_select_height"
+            android:layout_marginStart="@dimen/popup_button_select_margin_start"
+            android:layout_marginEnd="@dimen/popup_button_select_margin_end"
+            android:layout_marginBottom="@dimen/popup_button_select_margin_bottom"
+            android:background="@drawable/button"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/select"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/popup_button_select_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

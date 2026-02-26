@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="line"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lineContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorButtonBackground">
+
+        <TextView
+            android:id="@+id/containerTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/textButtonColorBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/machineSubTypeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/list_item_machine_place_label_subtype_margin_top"
+            android:layout_marginEnd="@dimen/list_item_machine_place_label_subtype_margin_end"
+            android:fontFamily="@font/segoeui"
+            tools:text="SWM"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/machineIDTextView" />
+
+        <TextView
+            android:id="@+id/machineIDTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/list_item_machine_place_label_rfid_margin_top"
+            android:fontFamily="@font/segoeui"
+            android:paddingEnd="10dp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="213534524" />
+
+        <TextView
+            android:id="@+id/machineCodeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/seguibl"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/list_item_machine_place_label_machine_code_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/machineSubTypeTextView"
+            app:layout_constraintStart_toStartOf="@+id/guideline8"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="MC023" />
+
+        <TextView
+            android:id="@+id/placeNoTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/list_item_machine_place_label_place_no_margin_start"
+            android:layout_marginTop="@dimen/list_item_machine_place_label_place_no_margin_end"
+            android:layout_marginBottom="@dimen/list_item_machine_place_label_place_no_margin_bottom"
+            android:fontFamily="@font/segoeui"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/list_item_machine_place_label_place_no_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="021-A" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="68dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

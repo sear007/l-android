@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <variable
+            name="isSuccess"
+            type="Boolean" />
+
+        <variable
+            name="isError"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapse_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                app:contentScrim="@color/colorBackground"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:titleEnabled="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:layout_collapseMode="parallax"
+                    app:visibleGone="@{isSuccess}">
+
+                    <View
+                        android:id="@+id/v_bg_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="#315069"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_updated"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_4x"
+                        android:layout_marginTop="@dimen/margin_2x"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text_x_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="CO Date: 2022-04-18" />
+
+                    <TextView
+                        android:id="@+id/tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_1x"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="@id/tv_date"
+                        app:layout_constraintTop_toBottomOf="@id/tv_date"
+                        tools:text="Style: FW2424318A" />
+
+                    <TextView
+                        android:id="@+id/tv_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_1x"
+                        android:layout_marginBottom="@dimen/margin_2x"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="@id/tv_date"
+                        app:layout_constraintTop_toBottomOf="@id/tv_style"
+                        tools:text="Line: YTI-13" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_4x"
+                        android:background="@drawable/rounded"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/padding_4x"
+                        android:paddingTop="@dimen/padding_1x"
+                        android:paddingEnd="@dimen/padding_4x"
+                        android:paddingBottom="@dimen/padding_1x"
+                        android:textColor="#F57C00"
+                        android:textSize="@dimen/text_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_date"
+                        tools:text="IN PROGRESS" />
+
+                    <TextView
+                        android:id="@+id/tv_product_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_1x"
+                        android:layout_marginEnd="@dimen/margin_4x"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_style"
+                        tools:text="CO Type: C" />
+
+                    <TextView
+                        android:id="@+id/tv_updated"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_1x"
+                        android:layout_marginEnd="@dimen/margin_4x"
+                        android:fontFamily="@font/roboto_light"
+                        android:paddingBottom="@dimen/padding_2x"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_product_type"
+                        tools:text="2022-04-18 12:01" />
+
+                    <ImageView
+                        android:id="@+id/iv_machine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_4x"
+                        android:layout_marginTop="@dimen/margin_4x"
+                        android:src="@drawable/ic_machine_with_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_bg_top" />
+
+                    <TextView
+                        android:id="@+id/tv_machine_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_2x"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="33"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text_x_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_machine"
+                        app:layout_constraintStart_toEndOf="@id/iv_machine"
+                        app:layout_constraintTop_toTopOf="@id/iv_machine" />
+
+                    <ImageView
+                        android:id="@+id/iv_critical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_4x"
+                        android:src="@drawable/ic_star_with_circle"
+                        app:layout_constraintStart_toEndOf="@id/tv_machine_count"
+                        app:layout_constraintTop_toTopOf="@id/iv_machine" />
+
+                    <TextView
+                        android:id="@+id/tv_critical_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_2x"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="9"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text_x_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_critical"
+                        app:layout_constraintStart_toEndOf="@id/iv_critical"
+                        app:layout_constraintTop_toTopOf="@id/iv_critical" />
+
+                    <TextView
+                        android:id="@+id/tv_summary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4x"
+                        android:layout_marginEnd="@dimen/margin_4x"
+                        android:background="@drawable/bg_reg_blue"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/padding_6x"
+                        android:paddingTop="@dimen/padding_1x"
+                        android:paddingEnd="@dimen/padding_6x"
+                        android:paddingBottom="@dimen/padding_1x"
+                        android:text="@string/machine_summary"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_x_normal"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_machine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_bg_top" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolBarTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:layout_gravity="top"
+                    android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                    android:layout_marginBottom="34dp"
+                    android:fontFamily="@font/segoeui"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@string/change_over"
+                    app:titleTextColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_information_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#081C29"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="@dimen/padding_4x"
+                    android:paddingTop="@dimen/padding_2x"
+                    android:paddingEnd="@dimen/padding_6x"
+                    android:paddingBottom="@dimen/padding_2x"
+                    android:text="@string/information_status"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_x_normal"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_summary"
+                    app:visibleGone="@{isSuccess}" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nest_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#081C29"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:visibleGone="@{isSuccess}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_change_over"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:splitMotionEvents="true"
+                app:layout_constraintTop_toBottomOf="@id/tv_information_status"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_operator" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:indeterminate="true"
+            app:visibleGone="@{isLoading}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

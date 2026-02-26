@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.ltlabs.ui.main.mechanic.setupline.SetupLineFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="co.ltlabs.ltmechanic.viewmodels.main.mechanic.SetupLineViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+
+            <TextView
+                android:id="@+id/btnChangeLineSetup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="@dimen/setup_line_button_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_button_margin_end"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_change_line"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/btnConfirmLineSetup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sewingLineTextView"
+                app:layout_constraintVertical_bias="0.948" />
+
+            <TextView
+                android:id="@+id/confirmLineTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_confirm_sewing_line_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_confirm_sewing_line_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_label_confirm_sewing_line_margin_end"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/setup_line_label_confirm_sewing_line"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_confirm_sewing_line_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sewingLineTextView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_label_sewing_line_height"
+                android:layout_marginStart="@dimen/setup_line_label_sewing_line_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_sewing_line_margin_top"
+                android:layout_marginEnd="@dimen/setup_line_label_sewing_line_margin_end"
+                android:background="@drawable/line_setup_button"
+                android:fontFamily="@font/seguibl"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_sewing_line_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirmLineTextView" />
+
+            <TextView
+                android:id="@+id/btnClearLineSetup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="@dimen/setup_line_button_clear_line_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_button_clear_line_margin_end"
+                android:background="@drawable/ic_line_setup_edit_button"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_clear_line"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sewingLineTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <TextView
+                android:id="@+id/btnConfirmLineSetup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/setup_line_button_height"
+                android:layout_marginStart="@dimen/setup_line_button_continue_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_button_continue_margin_end"
+                android:background="@drawable/button"
+                android:enabled="false"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="@string/setup_line_button_continue"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/sewingLineTextView"
+                app:layout_constraintVertical_bias="0.96" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_guide_line_margin_start"
+                android:layout_marginEnd="@dimen/setup_line_guide_line_margin_end"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="@dimen/setup_line_guide_line_constraint_begin"
+                app:layout_constraintGuide_end="@dimen/setup_line_guide_line_constraint_end"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/toolBarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/setup_line_label_title_margin_start"
+                android:layout_marginTop="@dimen/setup_line_label_title_margin_top"
+                android:fontFamily="@font/segoeui"
+                android:text="@string/setup_line_label_title"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/setup_line_label_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_centerInParent="true"
+                android:id="@+id/progress_bar"
+                android:visibility="gone"
+                android:elevation="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

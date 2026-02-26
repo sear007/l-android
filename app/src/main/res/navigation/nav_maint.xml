@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_maint"
+    app:startDestination="@id/maintFragment">
+
+    <action
+        android:id="@+id/action_maintenanceFragment_to_maintenancePreviewFragment"
+        app:destination="@id/maintenancePreviewFragment" />
+
+    <action
+        android:id="@+id/action_global_to_maintenanceChecklistFragment"
+        app:destination="@id/maintenanceChecklistFragment" />
+
+    <include app:graph="@navigation/nav_repair_history" />
+
+    <include app:graph="@navigation/nav_maint_history" />
+
+    <fragment
+        android:id="@+id/maintFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintFragment"
+        android:label="MaintFragment"
+        tools:layout="@layout/fragment_maint" />
+
+    <fragment
+        android:id="@+id/maintenancePreviewFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintenancePreviewFragment"
+        android:label="MaintenancePreviewFragment"
+        tools:layout="@layout/fragment_maintenance_preview">
+        <action
+            android:id="@+id/action_maintenancePreviewFragment_to_repairHistoryFragment"
+            app:destination="@id/nav_repair_history" />
+        <action
+            android:id="@+id/action_maintenancePreviewFragment_to_maintenanceHistoryFragment"
+            app:destination="@id/nav_maint_history" />
+        <action
+            android:id="@+id/action_maintenancePreviewFragment_to_maintAddCheckListFragment"
+            app:destination="@id/maintAddCheckListFragment" />
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/maintenanceChecklistFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintenanceChecklistFragment"
+        android:label="MaintenanceChecklistFragment"
+        tools:layout="@layout/fragment_maintenance_checklist">
+        <action
+            android:id="@+id/action_maintenanceChecklistFragment_to_maintenanceFragment"
+            app:destination="@id/maintFragment"
+            app:popUpTo="@id/maintFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+        <argument
+            android:name="ticketStatus"
+            app:argType="string" />
+        <argument
+            android:name="remark"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/maintAddCheckListFragment"
+        android:name="co.ltlabs.ltmechanic.ui.main.mechanic.maintenance.MaintAddCheckListFragment"
+        android:label="MaintAddCheckListFragment"
+        tools:layout="@layout/fragment_maint_add_checklist">
+
+        <argument
+            android:name="machineId"
+            app:argType="long" />
+
+        <argument
+            android:name="ticketId"
+            app:argType="long" />
+
+        <argument
+            android:name="ticketNo"
+            app:argType="string" />
+
+        <argument
+            android:name="ticketStatus"
+            app:argType="string" />
+        <argument
+            android:name="remark"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_maintAddCheckListFragment_to_maintenanceChecklistFragment"
+            app:destination="@id/maintenanceChecklistFragment"
+            app:popUpTo="@id/maintenanceChecklistFragment"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+</navigation>

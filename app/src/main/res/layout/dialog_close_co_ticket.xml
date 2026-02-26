@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_4x">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="120dp"
+            app:layout_constraintStart_toEndOf="@id/tv_critical_count_tag" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="@dimen/padding_4x"
+            android:text="Close Changeover Ticket"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_medium"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_line_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:fontFamily="@font/roboto"
+            android:text="Line"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/tv_line_tag"
+            tools:text=": YTI-29" />
+
+        <TextView
+            android:id="@+id/tv_style_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:fontFamily="@font/roboto"
+            android:text="Style"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_line" />
+
+        <TextView
+            android:id="@+id/tv_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/tv_style_tag"
+            tools:text=": FW2424318A" />
+
+        <TextView
+            android:id="@+id/tv_machines_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:fontFamily="@font/roboto"
+            android:text="Machines"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_style" />
+
+        <TextView
+            android:id="@+id/tv_machines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/tv_machines_tag"
+            tools:text=": 333" />
+
+        <TextView
+            android:id="@+id/tv_critical_count_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:fontFamily="@font/roboto"
+            android:text="Critical M/C"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_machines" />
+
+        <TextView
+            android:id="@+id/tv_critical_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_x_normal"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/tv_critical_count_tag"
+            tools:text=": 99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
